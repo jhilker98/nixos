@@ -29,6 +29,8 @@
     extraNodePkgs.tailwindcss-document-cli
     extraNodePkgs."@astrojs/language-server"
     texlive.combined.scheme-full
+    qpdf
+    cheat
     auctex
     zlib
     (python3.withPackages (p:
@@ -399,5 +401,8 @@
     };
 
     services.waterNotifier = { enable = true; };
+    programs.lazygit = {
+      enable = true;
+    };
 
   }
