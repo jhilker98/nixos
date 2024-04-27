@@ -405,4 +405,11 @@
       enable = true;
     };
 
+    home.file."Documents/cheat/community".source = pkgs.fetchFromGitHub {
+      owner = "cheat";
+      repo = "cheatsheets";
+      rev = "36bdb99dcfadde210503d8c2dcf94b34ee950e1d";
+      sha256 = "0yzj15zkn7zfwspr07qfq9xqrkiakd1z2cgnb8r2nk2qz6ng9yq1";
+    };
+
   }
