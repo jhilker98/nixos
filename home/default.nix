@@ -422,6 +422,14 @@
             "community"
           ];
         }
+        {
+          name = "personal";
+          path = "${config.xdg.userDirs.documents}/cheat/personal";
+          readonly = true;
+          tags = [
+            "personal"
+          ];
+        }
       ];
     };
   }
