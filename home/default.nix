@@ -412,4 +412,16 @@
       sha256 = "0yzj15zkn7zfwspr07qfq9xqrkiakd1z2cgnb8r2nk2qz6ng9yq1";
     };
 
+    xdg.configFile."cheat/conf.yml".source = (pkgs.formats.yaml {}).generate "conf.yml" {
+      cheatpaths = [
+        {
+          name = "community";
+          path = "${config.xdg.userDirs.documents}/cheat/community";
+          readonly = true;
+          tags = [
+            "community"
+          ];
+        }
+      ];
+    };
   }
