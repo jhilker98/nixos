@@ -7,7 +7,6 @@
 }:
 
 stdenv.mkDerivation {
-  stdenv.mkDerivation {
     pname = "libby";
     version = "1d30163";
     src = pkgs.fetchFromGitHub {
