@@ -22,6 +22,6 @@ stdenv.mkDerivation {
       mkdir -p $out/bin
       cp libby $out/bin/libby
       wrapProgram $out/bin/libby \
-        --prefix PATH : ${lib.makeBinPath with pkgs; [ bash subversion ]}
+        --prefix PATH : ${lib.makeBinPath [ pkgs.bash pkgs.subversion ]}
     '';
 }
