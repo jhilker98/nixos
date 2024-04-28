@@ -2,8 +2,8 @@
 family = "Josevka"
 spacing = "normal"
 serifs = "sans"
-export-glyph-names = true
-no-cv-ss = true
+exportGlyphNames = true
+noCvSs = true
 
 [buildPlans.iosevka-josevka.variants]
   inherits = "ss03"
