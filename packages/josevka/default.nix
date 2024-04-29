@@ -7,11 +7,10 @@ inputs,
 
 # All other arguments come from NixPkgs. You can use `pkgs` to pull packages or helpers
 # programmatically or you may add the named attributes as arguments here.
-pkgs, stdenv, ... }: {
+pkgs, stdenv, ... }: 
 
 pkgs.iosevka.override {
   privateBuildPlan = builtins.readFile ./build-plans.toml;
   set = "josevka";
-};
-
 }
+
