@@ -33,5 +33,8 @@
         # A title to show for your flake, typically the name.
         title = "Jacob's NixOS Flake";
       };
+      homes.modules = with inputs; [
+        ./homes/x86_64
+      ];
     };
 }
