@@ -23,24 +23,123 @@
       url = "github:snowfallorg/lib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
-  outputs = inputs:
-    inputs.snowfall-lib.mkFlake {
-      # You must provide our flake inputs to Snowfall Lib.
-      inherit inputs;
-
-      # The `src` must be the root of the flake. See configuration
-      # in the next section for information on how you can move your
-      # Nix files to a separate directory.
-      src = ./.;
-
-      namespace = "jhilker98-dotfiles";
-      meta = {
-        # A slug to use in documentation when displaying things like file paths.
-        name = "jhilker98-dotfiles";
-
-        # A title to show for your flake, typically the name.
-        title = "Jacob's NixOS Flake";
-      };
+    systems.url = "github:nix-systems/x86_64-linux";
+    utils = {
+      url = "github:numtide/flake-utils";
+      inputs.systems.follows = "systems";
     };
-}
+
+  };
+  outputs = { self, nixpkgs, home-manager, home-manager-wsl, stylix, nix-colors
+    , base16-schemes, nix-wallpaper, utils, ... }@inputs:
+    {
+
+      nixosConfigurations = let
+        system = "x86_64-linux";
+        lib = nixpkgs.lib;
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [ self.overlays.default ];
+        };
+        baseConfig = {
+          inherit system;
+          specialArgs = { inherit self inputs nix-colors; };
+          modules = [
+            ./system
+            stylix.nixosModules.stylix
+            ./system
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit nix-colors; };
+                users.jhilker = {
+                  imports = [ ./home inputs.nixvim.homeManagerModules.nixvim ];
+                };
+              };
+            }
+          ];
+        };
+      in {
+        virtualbox = lib.nixosSystem {
+          inherit (baseConfig) system specialArgs;
+          modules = baseConfig.modules ++ [
+            ./hosts/virtualbox.nix
+            home-manager.nixosModules.home-manager
+            { home-manager.users.jhilker.imports = [ ./home/desktop ]; }
+
+          ];
+        };
+        vmware = lib.nixosSystem {
+          inherit (baseConfig) system specialArgs;
+          modules = baseConfig.modules ++ [
+            ./hosts/vmware.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.users.jhilker.imports =
+                [ ./home/desktop ./home/desktop/picom.nix ];
+            }
+          ];
+        };
+        netbook = lib.nixosSystem {
+          inherit (baseConfig) system specialArgs;
+          modules = baseConfig.modules ++ [
+            ./hosts/netbook.nix
+            ./system/audio
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.users.jhilker.imports =
+                [ ./home/desktop ./home/desktop/picom.nix ];
+            }
+          ];
+        };
+      };
+
+      homeConfigurations = {
+        wsl = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          modules = [
+            ./home
+            ./home/utils/wsl.nix
+            home-manager-wsl.homeModules.default
+            { wsl.baseDistro = "ubuntu"; }
+
+            inputs.nixvim.homeManagerModules.nixvim
+            stylix.homeManagerModules.stylix
+            ./home
+          ];
+          extraSpecialArgs = { inherit nix-colors; };
+        };
+      };
+    } // utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        packages = rec {
+          josevka = pkgs.iosevka.override {
+            privateBuildPlan = builtins.readFile ./utils/stylix/plans/josevka.toml;
+            set = "josevka";
+          };
+          josevka-mono = pkgs.iosevka.override {
+            privateBuildPlan = builtins.readFile ./utils/stylix/plans/josevka.toml;
+            set = "josevka-mono";
+          };
+          josevka-code = pkgs.iosevka.override {
+            privateBuildPlan = builtins.readFile ./utils/stylix/plans/josevka-code.toml;
+            set = "josevka-code";
+          };
+
+          josevka-book-sans = pkgs.iosevka.override {
+            privateBuildPlan = builtins.readFile ./utils/stylix/plans/josevka-book.toml;
+            set = "josevka-book-sans";
+          };
+          josevka-book-slab = pkgs.iosevka.override {
+            privateBuildPlan = builtins.readFile ./utils/stylix/plans/josevka-book.toml;
+            set = "josevka-book-slab";
+          };
+
+        };
+      });
+    }
+
