@@ -29,11 +29,11 @@
       # in the next section for information on how you can move your
       # Nix files to a separate directory.
       src = ./.;
-      namespace = "jhilker98-dotfiles";
+      namespace = "jhilker98";
       overlays = with inputs; [
         # Use the overlay provided by this flake.
         snowfall-flake.overlays.default
       ];
-      snowfallorg.users.jhilker.home.config = import ./homes/x86_64-linux;
+      
     };
 }
