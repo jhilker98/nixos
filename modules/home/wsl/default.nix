@@ -1,4 +1,4 @@
-{config, lib, pkgs, inputs, home, target, format, virtual, host, ...}:
+{config, lib, pkgs, inputs, ...}:
 {
   home.sessionVariables = {
     "WSLHOME" = "/mnt/c/Users/camoh/";
