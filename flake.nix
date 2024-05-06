@@ -12,6 +12,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    snowfall-flake = {
+      url = "github:snowfallorg/flake";
+      # Flake requires some packages that aren't on 22.05, but are available on unstable.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # We will handle this in the next section.
@@ -24,17 +29,10 @@
       # in the next section for information on how you can move your
       # Nix files to a separate directory.
       src = ./.;
-
       namespace = "jhilker98-dotfiles";
-      meta = {
-        # A slug to use in documentation when displaying things like file paths.
-        name = "jhilker98-dotfiles";
-
-        # A title to show for your flake, typically the name.
-        title = "Jacob's NixOS Flake";
-      };
-      homes.modules = with inputs; [
-        ./homes/x86_64
+      overlays = with inputs; [
+        # Use the overlay provided by this flake.
+        snowfall-flake.overlays.default
       ];
     };
 }
