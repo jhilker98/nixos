@@ -34,5 +34,6 @@
         # Use the overlay provided by this flake.
         snowfall-flake.overlays.default
       ];
+      snowfallorg.users.jhilker.home.config = import ./homes/x86_64-linux;
     };
 }
