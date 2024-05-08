@@ -35,5 +35,11 @@
         snowfall-flake.overlays.default
       ];
       
+      homes = {
+        modules = with inputs; [];
+        users = {
+          "jhilker@wsl".modules = with inputs; [];
+        };
+      };
     };
 }
