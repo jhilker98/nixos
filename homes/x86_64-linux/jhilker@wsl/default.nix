@@ -12,6 +12,9 @@
     config,
     ...
 }:
+with lib.jhilker98;
 {
-    # Your configuration.
+  jhilker98 = {
+    common.enable = true;
+  };
 }
