@@ -15,6 +15,7 @@ in {
     home = {
       stateVersion = "23.11";
       username = "jhilker"; 
+      packages = with pkgs; [];
     };
 
     programs = {
