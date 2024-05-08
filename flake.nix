@@ -28,6 +28,10 @@
       # Nix files to a separate directory.
       src = ./.;
 
+      channels-config = {
+        allowUnfree = true;
+      };
+
       snowfall = {
         # Choose a namespace to use for your flake's packages, library,
         # and overlays.
