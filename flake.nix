@@ -18,8 +18,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  # We will handle this in the next section.
   outputs = inputs:
     inputs.snowfall-lib.mkFlake {
       # You must provide our flake inputs to Snowfall Lib.
@@ -29,17 +27,31 @@
       # in the next section for information on how you can move your
       # Nix files to a separate directory.
       src = ./.;
-      namespace = "jhilker98";
+
+      snowfall = {
+        # Choose a namespace to use for your flake's packages, library,
+        # and overlays.
+        namespace = "jhilker98";
+        package-namespace = "jhilker98";
+        # Add flake metadata that can be processed by tools like Snowfall Frost.
+        meta = {
+          # A slug to use in documentation when displaying things like file paths.
+          name = "jhilker98-dotfiles";
+
+          # A title to show for your flake, typically the name.
+          title = "Jacob's NixOS dotfiles";
+        };
+      };
       overlays = with inputs; [
         # Use the overlay provided by this flake.
         snowfall-flake.overlays.default
       ];
       
       homes = {
-        modules = with inputs; [];
         users = {
           "jhilker@wsl".modules = with inputs; [];
         };
       };
     };
+
 }

@@ -1,23 +1,55 @@
-{
-    # Snowfall Lib provides a customized `lib` instance with access to your flake's library
-    # as well as the libraries available from your flake's inputs.
-    lib,
-    # An instance of `pkgs` with your overlays and packages applied is also available.
-    pkgs,
-    # You also have access to your flake's inputs.
-    inputs,
+{ lib, config, pkgs, inputs, ... }:
 
-    # Additional metadata is provided by Snowfall Lib.
-    system, # The system architecture for this host (eg. `x86_64-linux`).
-    target, # The Snowfall Lib target for this system (eg. `x86_64-iso`).
-    format, # A normalized name for the system target (eg. `iso`).
-    virtual, # A boolean to determine whether this system is a virtual target using nixos-generators.
-    systems, # An attribute map of your defined hosts.
+with lib;
+with lib.jhilker98;
+let
+  is-linux = pkgs.stdenv.isLinux;
 
-    # All other arguments come from the module system.
-    config,
-    ...
-}:
-{
-    # Your configuration.
+  cfg = config.jhilker98.common;
+in {
+  options.jhilker98.common = {
+    enable = mkEnableOption "Common";
+  };
+
+  config = mkIf cfg.enable {
+    home = {
+      stateVersion = "23.11";
+      packages = with pkgs;
+      [
+        chroma
+        file
+        fortune
+        killall
+        fastfetch
+        p7zip
+        thefuck
+        unzip
+      ];
+    };
+
+    programs = {
+      home-manager.enable = true;
+      nix-index.enable = true;
+    };
+
+    jhilker98 = {
+      bat.enable = true;
+      btop.enable = true;
+      eza.enable = true;
+      fzf.enable = true;
+      gnupg.enable = true;
+      tmux.enable = true;
+      nixvim.enable = true;
+      starship.enable = true;
+      sops.enable = true;
+      user.enable = true;
+      vim.enable = false;
+      yubikey.enable = true;
+      zellij.enable = true;
+      zoxide.enable = true;
+      zsh.enable = true;
+    };
+
+    xdg.enable = true;
+  };
 }

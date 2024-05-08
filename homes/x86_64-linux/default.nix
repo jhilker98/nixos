@@ -6,10 +6,10 @@
   ...
 }: 
 with lib;
-with lib.jhilker; 
-let cfg = lib.jhilker.common;
+with lib.jhilker98; 
+let cfg = lib.jhilker98.common;
 in {
-  options.jhilker.common = {
+  options.jhilker98.common = {
     enable = mkEnableOption "Common";
   };
 
