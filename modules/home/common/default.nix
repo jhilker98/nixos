@@ -68,7 +68,10 @@ in {
     programs = {
       home-manager.enable = true;
       zsh.enable = true;
-      starship.enable = true;
+      starship = {
+	enable = true;
+	settings.line_break.disabled = true;
+      };	
     };
   };
 }
