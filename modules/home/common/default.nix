@@ -67,7 +67,13 @@ in {
     };
     programs = {
       home-manager.enable = true;
-      zsh.enable = true;
+      zsh = {
+	enable = true;
+	autocd = true;
+	syntaxHighlighting.enable = true;
+	autosuggestion.enable = true;
+	dotDir = ".config/zsh";	
+      };
       starship = {
 	enable = true;
 	settings.line_break.disabled = true;
