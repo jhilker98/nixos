@@ -62,6 +62,7 @@ in {
         plantuml
         mermaid-cli
         units
+        snowfallorg.flake
       ];
     };
 
