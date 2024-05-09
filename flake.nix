@@ -18,6 +18,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix.url = "github:danth/stylix";
+    fzf-marks = {
+	url = "github:urbainvaes/fzf-marks";
+	flake = false;
+    };
   };
   outputs = inputs:
     inputs.snowfall-lib.mkFlake {
