@@ -12,6 +12,7 @@ in {
 	  enable = true;
 	  syntaxHighlighting.enable = true;
 	  autocd.enable = true;
+	  autosuggestion.enable = true;
 	};
   };
 
