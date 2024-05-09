@@ -33,7 +33,7 @@ in {
               "%C(italic)(%h)%Creset %C(bold 12)%an%Creset: %C(3)%s %Creset(%ad)";
             };
           };
-          ignores = [ "result" "result-*" "node_modules/" ];
+          ignores = [ "result" "result-*" "node_modules/"  "*~" "*.swp" ];
         };
     };
 }
