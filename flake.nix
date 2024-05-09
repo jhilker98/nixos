@@ -17,6 +17,7 @@
       # Flake requires some packages that aren't on 22.05, but are available on unstable.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix.url = "github:danth/stylix";
   };
   outputs = inputs:
     inputs.snowfall-lib.mkFlake {
