@@ -60,7 +60,9 @@
           snowfall-flake.overlays.default
         ];
 
-      homes = { users = { "jhilker@wsl".modules = with inputs; [ ]; }; };
+      homes = { 
+	modules = with inputs; [nixvim.homeManagerModules.nixvim];
+	users = { "jhilker@wsl".modules = with inputs; [ ]; }; };
     };
 
 }
