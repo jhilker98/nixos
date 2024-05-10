@@ -15,7 +15,10 @@ with lib.jhilker98;
       services.emacs = {
         enable = true;
       };
-
+      home.sessionVariables."DOOMDIR" = {
+        source = ./config;
+	recursive = true;
+      };
     };
   }
 
