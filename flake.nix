@@ -19,8 +19,13 @@
     };
     stylix.url = "github:danth/stylix";
     fzf-marks = {
-	url = "github:urbainvaes/fzf-marks";
-	flake = false;
+      url = "github:urbainvaes/fzf-marks";
+      flake = false;
+    };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs = inputs:
@@ -33,9 +38,7 @@
       # Nix files to a separate directory.
       src = ./.;
 
-      channels-config = {
-        allowUnfree = true;
-      };
+      channels-config = { allowUnfree = true; };
 
       snowfall = {
         # Choose a namespace to use for your flake's packages, library,
@@ -51,16 +54,13 @@
           title = "Jacob's NixOS dotfiles";
         };
       };
-      overlays = with inputs; [
-        # Use the overlay provided by this flake.
-        snowfall-flake.overlays.default
-      ];
-      
-      homes = {
-        users = {
-          "jhilker@wsl".modules = with inputs; [];
-        };
-      };
+      overlays = with inputs;
+        [
+          # Use the overlay provided by this flake.
+          snowfall-flake.overlays.default
+        ];
+
+      homes = { users = { "jhilker@wsl".modules = with inputs; [ ]; }; };
     };
 
 }
