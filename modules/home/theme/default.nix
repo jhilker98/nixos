@@ -17,5 +17,10 @@ in {
       };
       base16Scheme = "${inputs.base16-themes}/base16/gruvbox-dark-hard.yaml";
     };
+    programs = {
+      nixvim.colorschemes.base16 = mkIf config.jhilker98.nixvim.enable {
+        enable = true;
+      };
+    };
   };
 }
