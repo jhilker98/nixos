@@ -78,14 +78,16 @@ in {
       #};
       starship = {
 	enable = true;
-	settings.line_break.disabled = true;
+        #settings.line_break.disabled = true;
       };	
     };
 	jhilker98 = {
 	  emacs.enable = true;
 	  zsh.enable = true;
-	  git.enable = true;
-	  gpg.enable = true;
+          git.enable = true;
+
+          gpg.enable = true;
+          theme.enable = true;
 	};
   };
 }

@@ -18,6 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix.url = "github:danth/stylix";
+
     fzf-marks = {
       url = "github:urbainvaes/fzf-marks";
       flake = false;
@@ -26,6 +27,10 @@
       url = "github:nix-community/nixvim";
       # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    base16-themes = {
+      url = "github:tinted-theming/schemes";
+      flake = false;
     };
   };
   outputs = inputs:
@@ -61,7 +66,7 @@
         ];
 
       homes = { 
-	modules = with inputs; [nixvim.homeManagerModules.nixvim];
+	modules = with inputs; [nixvim.homeManagerModules.nixvim stylix.homeManagerModules.stylix];
 	users = { "jhilker@wsl".modules = with inputs; [ ]; }; };
     };
 
