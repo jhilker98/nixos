@@ -9,12 +9,11 @@ in {
    };
 
    config = mkIf cfg.enable {
-    programs = {
-        fzf = {
+        programs.fzf = {
           enable = true;
+	  enableZshIntegration = mkIf config.jhilker98.zsh.enable;
         };
     };
-   };
 
  }
 

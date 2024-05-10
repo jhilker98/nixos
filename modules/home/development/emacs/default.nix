@@ -15,10 +15,11 @@ with lib.jhilker98;
       services.emacs = {
         enable = true;
       };
-      home.sessionVariables."DOOMDIR" = {
+      xdg.configFile."doom" = {
         source = ./config;
 	recursive = true;
       };
+	home.sessionVariables."DOOMDIR" = "$HOME/.dotfiles/modules/home/development/emacs/config";
     };
   }
 
