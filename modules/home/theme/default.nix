@@ -20,6 +20,7 @@ in {
     programs = {
       nixvim.colorschemes.base16 = mkIf config.jhilker98.nixvim.enable {
         enable = true;
+        colorscheme = lib.mkDefault "base16-${config.lib.stylix.colors.slug}";
       };
     };
   };
