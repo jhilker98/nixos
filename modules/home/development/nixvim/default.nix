@@ -10,7 +10,7 @@ in {
       nixvim = {
         enable = true;
         defaultEditor = true;
-        options = {
+        opts = {
           number = true; # Show line numbers
           relativenumber = true; # Show relative line numbers
           shiftwidth = 2; # Tab width should be 2
@@ -28,6 +28,7 @@ in {
           emmet.enable = true;
           which-key = { enable = true; };
 	  lightline.enable = true;
+	  lsp.enable = true;
         };
       };
       zsh.shellAliases = { "vim" = "nvim"; };
