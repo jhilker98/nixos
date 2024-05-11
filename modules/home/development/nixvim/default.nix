@@ -10,6 +10,10 @@ in {
       nixvim = {
         enable = true;
         defaultEditor = true;
+	plugins = {
+	  lightline.enable = true;
+	  lsp.enable = true;
+	};
       };
       zsh.shellAliases = { "vim" = "nvim"; };
       bash.shellAliases = { "vim" = "nvim"; };
