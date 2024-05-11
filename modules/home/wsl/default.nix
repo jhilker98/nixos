@@ -12,6 +12,7 @@
     "DISPLAY" = "$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0";
   };
   programs.zsh.shellAliases = {
+    "spicetify" = "spicetify.exe";
     "rd" = "rolldice -s $@";
     "notify-send" = "wsl-notify-send.exe $@";
   };
