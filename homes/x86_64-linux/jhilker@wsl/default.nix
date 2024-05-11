@@ -20,5 +20,6 @@ with lib.jhilker98;
     theme.enable = true;
     git.enable = true;
     nixvim.enable = true;
+    starship.enable = true;
   };
 }

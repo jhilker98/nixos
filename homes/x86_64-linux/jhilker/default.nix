@@ -17,6 +17,7 @@
   jhilker98 = {
     common.enable = true;
     development.enable = true;
+    starship.enable = true;
     git.enable = true;
     nixvim.enable = true;
     theme.enable = true;
