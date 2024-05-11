@@ -1,3 +1,5 @@
 #+title: NixOS Dotfiles
+#+HTML: <a href="https://builtwithnix.org"><img src="https://img.shields.io/static/v1?logo=nixos&logoColor=white&label=&message=Built%20with%20Nix&color=41439a&style=for-the-badge"></a>
+#+HTML: <a href="https://github.com/jhilker1/nixos-dots/blob/main/LICENSE"><img src="https://img.shields.io/github/license/jhilker98/nixos-dots?style=for-the-badge"></a>
 
-Hello, and welcome to my dotfiles
+Hello, and welcome to my dotfiles.
