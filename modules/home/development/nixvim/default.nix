@@ -2,9 +2,9 @@
 
 with lib;
 with lib.jhilker98;
-let cfg = config.jhilker98.nixvim;
+let cfg = config.jhilker98.development.nixvim;
 in {
-  options.jhilker98.nixvim = { enable = mkEnableOption "Nixvim"; };
+  options.jhilker98.development.nixvim = { enable = mkEnableOption "Nixvim"; };
   config = mkIf cfg.enable {
     programs = {
       nixvim = {

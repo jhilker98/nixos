@@ -15,7 +15,7 @@ in {
       };
       base16Scheme = "${inputs.base16-themes}/base16/gruvbox-dark-hard.yaml";
       targets = {
-        nixvim = mkIf config.jhilker98.nixvim.enable { enable = true; };
+        nixvim = mkIf config.jhilker98.development.nixvim.enable { enable = true; };
       };
     };
 
