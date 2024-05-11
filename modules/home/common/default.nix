@@ -82,7 +82,7 @@ in {
       };	
     };
 	jhilker98 = {
-	  emacs.enable = true;
+	  development.emacs.enable = true;
 	  zsh.enable = true;
           git.enable = true;
 

@@ -2,9 +2,9 @@
 with lib;
 with lib.jhilker98;
   let
-    cfg = config.jhilker98.emacs;
+    cfg = config.jhilker98.development.emacs;
   in {
-    options.jhilker98.emacs = {
+    options.jhilker98.development.emacs = {
       enable = mkEnableOption "Emacs"; 
     }; 
     config = mkIf cfg.enable {
