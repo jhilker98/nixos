@@ -12,6 +12,8 @@ in {
         defaultEditor = true;
 	plugins = {
 	  lightline.enable = true;
+	  surround.enable = true;
+	  fugitive.enable = true;
 	  lsp.enable = true;
 	};
       };
