@@ -13,10 +13,8 @@ in {
         autosuggestion.enable = true;
         syntaxHighlighting.enable = true;
         autocd = true;
-	dotDir = ".config/zsh";
-	initExtra = ''
-	  export $(dbus-launch)
-	'';
+        dotDir = ".config/zsh";
+        initExtra = "  export $(dbus-launch)\n";
       };
     };
 
