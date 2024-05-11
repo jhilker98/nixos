@@ -4,7 +4,7 @@ with lib;
 with lib.jhilker98;
 let cfg = config.jhilker98.development.starship;
 in {
-  options.jhilker98.starship = { enable = mkEnableOption "Starship"; };
+  options.jhilker98.development.starship = { enable = mkEnableOption "Starship"; };
 
   config = mkIf cfg.enable {
     programs = {

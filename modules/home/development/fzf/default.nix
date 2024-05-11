@@ -6,7 +6,7 @@ in {
   options.jhilker98.development.fzf = {
     enable = mkEnableOption "FZF";
     bookmarks = {
-      enable = mkEnableOption
+      enable = mkEnableOption "FZF-marks";
     };
   };
 

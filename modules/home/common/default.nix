@@ -74,20 +74,21 @@ in {
       #  autocd = true;
       #  syntaxHighlighting.enable = true;
       #  autosuggestion.enable = true;
-      #  dotDir = ".config/zsh";	
+      #  dotDir = ".config/zsh";
       #};
       starship = {
-	enable = true;
+        enable = true;
         #settings.line_break.disabled = true;
-      };	
+      };
     };
-	jhilker98 = {
-	  development.emacs.enable = true;
-	  zsh.enable = true;
-          git.enable = true;
+    jhilker98 = {
+      development = {
+        emacs.enable = true;
+        zsh.enable = true;
+      };
 
-          gpg.enable = true;
-          theme.enable = true;
-	};
+      gpg.enable = true;
+      theme.enable = true;
+    };
   };
 }
