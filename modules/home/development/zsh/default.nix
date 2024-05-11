@@ -14,6 +14,9 @@ in {
         syntaxHighlighting.enable = true;
         autocd = true;
 	dotDir = ".config/zsh";
+	initExtra = ''
+	  export $(dbus-launch)
+	'';
       };
     };
 
