@@ -17,6 +17,7 @@ with lib.jhilker98;
   jhilker98 = {
     common.enable = true;
     development.enable = true;
+    theme.enable = true;
     git.enable = true;
     nixvim.enable = true;
   };

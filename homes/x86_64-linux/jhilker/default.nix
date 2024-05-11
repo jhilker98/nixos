@@ -19,5 +19,6 @@
     development.enable = true;
     git.enable = true;
     nixvim.enable = true;
+    theme.enable = true;
   };
 }
