@@ -10,12 +10,31 @@ in {
       nixvim = {
         enable = true;
         defaultEditor = true;
-	plugins = {
-	  lightline.enable = true;
-	  surround.enable = true;
-	  fugitive.enable = true;
-	  lsp.enable = true;
-	};
+        plugins = {
+          lightline.enable = true;
+          surround.enable = true;
+          fugitive.enable = true;
+          lsp.enable = true;
+        };
+        keymaps = [
+          {
+            key = "<leader>hrr";
+            action = ":luafile ~/.config/nvim/init.lua<CR>";
+            options = {
+              silent = true;
+              desc = "Source the neovim config";
+            };
+          }
+
+          {
+            key = "<leader>gg";
+            action = ":Git<CR>";
+            options = {
+              silent = true;
+              desc = "Git status";
+            };
+          }
+        ];
       };
       zsh.shellAliases = { "vim" = "nvim"; };
       bash.shellAliases = { "vim" = "nvim"; };
