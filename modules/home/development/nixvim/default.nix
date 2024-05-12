@@ -13,6 +13,7 @@ in {
         plugins = {
           lightline.enable = true;
           surround.enable = true;
+          startify.enable = true;
           fugitive.enable = true;
           lsp.enable = true;
           which-key = {
