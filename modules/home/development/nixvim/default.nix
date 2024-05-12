@@ -15,6 +15,12 @@ in {
           surround.enable = true;
           fugitive.enable = true;
           lsp.enable = true;
+          which-key = {
+            enable = true;
+            registrations = { "<leader>g" = "Git"; };
+          };
+          nvim-autopairs.enable = true;
+          nix.enable = true;
         };
         globals.mapleader = " ";
         keymaps = [
@@ -30,8 +36,8 @@ in {
               desc = "Launch git";
             };
           }
-
         ];
+
       };
       zsh.shellAliases = { "vim" = "nvim"; };
       bash.shellAliases = { "vim" = "nvim"; };
