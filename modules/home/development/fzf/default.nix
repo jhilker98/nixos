@@ -14,6 +14,7 @@ in {
     programs.fzf = {
       enable = true;
       enableZshIntegration = mkIf config.jhilker98.zsh.enable;
+      enableBashIntegration = mkIf config.jhilker98.bash.enable;
     };
   };
 

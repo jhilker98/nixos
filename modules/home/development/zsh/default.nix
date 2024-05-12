@@ -2,9 +2,9 @@
 
 with lib;
 with lib.jhilker98;
-let cfg = config.jhilker98.development.zsh;
+let cfg = config.jhilker98.zsh;
 in {
-  options.jhilker98.development.zsh = { enable = mkEnableOption "Zsh"; };
+  options.jhilker98.zsh = { enable = mkEnableOption "Zsh"; };
 
   config = mkIf cfg.enable {
     programs = {

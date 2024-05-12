@@ -84,8 +84,9 @@ in {
     jhilker98 = {
       development = {
         emacs.enable = true;
-        zsh.enable = true;
       };
+
+      zsh.enable = true;
       services.waterNotifier = {
         enable = true;
       };

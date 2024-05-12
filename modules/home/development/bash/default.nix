@@ -1,9 +1,9 @@
 { config, lib, pkgs, inputs, ... }:
 with lib;
 with lib.jhilker98;
-let cfg = config.jhilker98.development.bash;
+let cfg = config.jhilker98.bash;
 in {
-  options.jhilker98.development.bash.enable = mkEnableOption "Bash";
+  options.jhilker98.bash.enable = mkEnableOption "Bash";
   config = mkIf cfg.enable {
     programs = {
       bash = {

@@ -16,9 +16,10 @@ with lib.jhilker98; {
       emacs.enable = true;
       nixvim.enable = true;
       starship.enable = true;
-      zsh.enable = true;
-      bash.enable = true;
     };
+
+    zsh.enable = true;
+    bash.enable = true;
     theme.enable = true;
 
     git.enable = true;
