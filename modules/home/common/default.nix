@@ -66,6 +66,10 @@ in {
         units
         snowfallorg.flake
       ];
+      shellAliases = {
+        "ls" = "${pkgs.eza}/bin/eza -alh --group-directories-first";
+        "cat" = "${pkgs.bat}/bin/bat -p";
+      };
     };
     programs = {
       home-manager.enable = true;
@@ -82,14 +86,10 @@ in {
       };
     };
     jhilker98 = {
-      development = {
-        emacs.enable = true;
-      };
+      development = { emacs.enable = true; };
 
       zsh.enable = true;
-      services.waterNotifier = {
-        enable = true;
-      };
+      services.waterNotifier = { enable = true; };
       gpg.enable = true;
       theme.enable = true;
     };
