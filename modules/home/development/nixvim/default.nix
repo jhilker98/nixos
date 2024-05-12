@@ -16,24 +16,21 @@ in {
           fugitive.enable = true;
           lsp.enable = true;
         };
+        globals.mapleader = " ";
         keymaps = [
           {
-            key = "<leader>hrr";
-            action = ":luafile ~/.config/nvim/init.lua<CR>";
-            options = {
-              silent = true;
-              desc = "Source the neovim config";
-            };
+            key = ";";
+            action = ":";
           }
-
           {
             key = "<leader>gg";
             action = ":Git<CR>";
             options = {
               silent = true;
-              desc = "Git status";
+              desc = "Launch git";
             };
           }
+
         ];
       };
       zsh.shellAliases = { "vim" = "nvim"; };
