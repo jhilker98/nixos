@@ -86,7 +86,10 @@ in {
       };
     };
     jhilker98 = {
-      development = { emacs.enable = true; };
+      development = {
+        emacs.enable = true;
+        fzf.enable = true;
+      };
 
       zsh.enable = true;
       fish.enable = true;
