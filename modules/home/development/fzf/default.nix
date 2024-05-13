@@ -15,7 +15,11 @@ in {
       enable = true;
       enableZshIntegration = mkIf config.jhilker98.zsh.enable;
       enableBashIntegration = mkIf config.jhilker98.bash.enable;
+      enableFishIntegration = mkIf config.jhilker98.fish.enable;
     };
+    programs.zsh.initExtra = mkIf lib.and config.jhilker.98.zsh.enable cfg.bookmarks.enable ''
+    source ${inputs.fzf-marks}/fzf-marks.plugin.zsh
+    '';
   };
 
 }
