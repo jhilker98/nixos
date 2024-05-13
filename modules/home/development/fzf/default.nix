@@ -24,10 +24,6 @@ in {
         source ${inputs.fzf-marks}/fzf-marks.plugin.zsh
       '';
 
-    programs.fish.initExtra =
-      mkIf lib.and config.jhilker98.fish.enable cfg.bookmarks.enable ''
-        source ${inputs.fzf-marks}/conf.d/fzf-marks.plugin.fish
-      '';
   };
 
 }

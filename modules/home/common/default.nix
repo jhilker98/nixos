@@ -89,6 +89,7 @@ in {
       development = { emacs.enable = true; };
 
       zsh.enable = true;
+      fish.enable = true;
       services.waterNotifier = { enable = true; };
       gpg.enable = true;
       theme.enable = true;
