@@ -73,6 +73,7 @@ in {
     };
     programs = {
       home-manager.enable = true;
+      direnv.enable = true;
       #zsh = {
       #  enable = true;
       #  autocd = true;
@@ -80,17 +81,13 @@ in {
       #  autosuggestion.enable = true;
       #  dotDir = ".config/zsh";
       #};
-      starship = {
-        enable = true;
-        #settings.line_break.disabled = true;
-      };
     };
     jhilker98 = {
       development = {
         emacs.enable = true;
         fzf.enable = true;
+        starship.enable = true;
       };
-
       zsh.enable = true;
       fish.enable = true;
       services.waterNotifier = { enable = true; };
