@@ -20,9 +20,12 @@ in {
         source ${inputs.fzf-marks}/fzf-marks.plugin.zsh
       '';
 
-      fish.initExtra = ''
+      fish.interactiveShellInit = ''
         source ${inputs.fzf-marks}/conf.d/fzf-marks.plugin.fish
       '';
+    };
+    home.file.".fzf-marks".text = (pkgs.formats.keyValue {}).generate "bookmarks" {
+    "dotfiles" = "/home/jhilker/.dotfiles";
     };
   };
 
