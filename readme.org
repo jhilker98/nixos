@@ -4,3 +4,5 @@
 #+HTML: <a href="https://github.com/snowfallorg/lib"><img alt="Powered by Nix Flakes" src="https://img.shields.io/badge/:badgeContent?style=for-the-badge&logo=nix&label=Powered%20By&labelColor=d8dee9"></a>
 
 Hello, and welcome to my dotfiles.
+
+* Installation
