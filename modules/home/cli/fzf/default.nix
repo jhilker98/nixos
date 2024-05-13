@@ -9,9 +9,9 @@ in {
     programs = {
       fzf = {
         enable = true;
-        enableZshIntegration = mkIf config.jhilker98.zsh.enable;
-        enableBashIntegration = mkIf config.jhilker98.bash.enable;
-        enableFishIntegration = mkIf config.jhilker98.fish.enable;
+        #enableZshIntegration = mkIf config.jhilker98.zsh.enable;
+        #enableBashIntegration = mkIf config.jhilker98.bash.enable;
+        #enableFishIntegration = mkIf config.jhilker98.fish.enable;
       };
       bash.initExtra = ''
         source ${inputs.fzf-marks}/fzf-marks.plugin.zsh
@@ -24,7 +24,7 @@ in {
         source ${inputs.fzf-marks}/conf.d/fzf-marks.plugin.fish
       '';
     };
-    home.file.".fzf-marks".text = (pkgs.formats.keyValue {}).generate "bookmarks" {
+    home.file.".fzf-marks".source = (pkgs.formats.keyValue {}).generate "bookmarks" {
     "dotfiles" = "/home/jhilker/.dotfiles";
     };
   };
