@@ -5,9 +5,7 @@ let cfg = config.jhilker98.development.fzf;
 in {
   options.jhilker98.development.fzf = {
     enable = mkEnableOption "FZF";
-    bookmarks = {
-      enable = mkEnableOption "FZF-marks";
-    };
+    bookmarks = { enable = mkEnableOption "FZF-marks"; };
   };
 
   config = mkIf cfg.enable {
@@ -17,9 +15,19 @@ in {
       enableBashIntegration = mkIf config.jhilker98.bash.enable;
       enableFishIntegration = mkIf config.jhilker98.fish.enable;
     };
-    programs.zsh.initExtra = mkIf lib.and config.jhilker.98.zsh.enable cfg.bookmarks.enable ''
-    source ${inputs.fzf-marks}/fzf-marks.plugin.zsh
-    '';
+    programs.bash.initExtra =
+      mkIf lib.and config.jhilker98.bash.enable cfg.bookmarks.enable ''
+        source ${inputs.fzf-marks}/fzf-marks.plugin.bash
+      '';
+    programs.zsh.initExtra =
+      mkIf lib.and config.jhilker98.zsh.enable cfg.bookmarks.enable ''
+        source ${inputs.fzf-marks}/fzf-marks.plugin.zsh
+      '';
+
+    programs.fish.initExtra =
+      mkIf lib.and config.jhilker98.fish.enable cfg.bookmarks.enable ''
+        source ${inputs.fzf-marks}/conf.d/fzf-marks.plugin.fish
+      '';
   };
 
 }
