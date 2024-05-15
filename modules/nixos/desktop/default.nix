@@ -6,6 +6,9 @@ let cfg = config.jhilker98.nixos.desktop;
 in {
   options.jhilker98.nixos.desktop = {
     enable = mkEnableOption "Desktop";
-    # useWayland =
+    useWayland = mkEnableOption "Use Wayland instead of X11";
+  };
+  config = mkIf cfg.enable {
+
   };
 }
