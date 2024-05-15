@@ -32,6 +32,7 @@
       url = "github:tinted-theming/schemes";
       flake = false;
     };
+    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
   };
   outputs = inputs:
     inputs.snowfall-lib.mkFlake {
