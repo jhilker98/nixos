@@ -64,10 +64,21 @@
           # Use the overlay provided by this flake.
           snowfall-flake.overlays.default
         ];
+      systems = {
+        modules.nixos = with inputs; [
 
-      homes = { 
-	modules = with inputs; [nixvim.homeManagerModules.nixvim stylix.homeManagerModules.stylix];
-	users = { "jhilker@wsl".modules = with inputs; [ ]; }; };
+        ];
+        hosts = {
+
+        };
+      };
+      homes = {
+        modules = with inputs; [
+          nixvim.homeManagerModules.nixvim
+          stylix.homeManagerModules.stylix
+        ];
+        users = { "jhilker@wsl".modules = with inputs; [ ]; };
+      };
     };
 
 }
