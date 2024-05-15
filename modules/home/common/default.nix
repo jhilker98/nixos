@@ -69,14 +69,12 @@ in {
       #};
     };
     jhilker98 = {
+      starship.enable = true;
       development = {
         emacs.enable = true;
         fzf.enable = true;
-        starship.enable = true;
       };
-      languages = {
-        python.enable = true;
-      }
+      langs = { python.enable = true; };
       zsh.enable = true;
       fish.enable = true;
       services.waterNotifier = { enable = true; };

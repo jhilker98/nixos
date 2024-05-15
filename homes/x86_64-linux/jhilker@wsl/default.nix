@@ -12,10 +12,10 @@ config, ... }:
 with lib.jhilker98; {
   jhilker98 = {
     common.enable = true;
+    starship.enable = true;
     development = {
       emacs.enable = true;
       nixvim.enable = true;
-      starship.enable = true;
     };
 
     zsh.enable = true;
