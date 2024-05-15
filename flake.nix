@@ -66,9 +66,10 @@
           snowfall-flake.overlays.default
         ];
       systems = {
-        modules.nixos = with inputs; [
+        modules.nixos = with inputs;
+          [
 
-        ];
+          ];
         hosts = {
 
         };
@@ -79,6 +80,11 @@
           stylix.homeManagerModules.stylix
         ];
         users = { "jhilker@wsl".modules = with inputs; [ ]; };
+      };
+      outputs-builder = channels: {
+        # Outputs in the outputs builder are transformed to support each system. This
+        # entry will be turned into multiple different outputs like `formatter.x86_64-linux.*`.
+        formatter = channels.nixpkgs.alejandra;
       };
     };
 
