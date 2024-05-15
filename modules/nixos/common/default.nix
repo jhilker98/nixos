@@ -9,6 +9,6 @@ in {
     enable = mkEnableOption "Core NixOS module";
   };
   config = mkIf cfg.enable {
-
+    system.stateVersion = "23.11";
   };
 }
