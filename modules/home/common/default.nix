@@ -19,10 +19,8 @@ in {
       stateVersion = "23.11";
       username = "jhilker";
       packages = with pkgs; [
-        texlive.combined.scheme-full
         qpdf
         cheat
-        auctex
         zlib
         act
         tldr
