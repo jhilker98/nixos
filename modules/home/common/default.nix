@@ -24,22 +24,10 @@ in {
         cheat
         auctex
         zlib
-        (python3.withPackages (p:
-          with p; [
-            fontforge
-            numpy
-            pandas
-            flask
-            virtualenvwrapper
-            pip
-            # httpx
-            pygobject3
-          ]))
         act
         tldr
         wakatime
         ttfautohint
-        nodePackages.pyright
         nodejs
         nodePackages.npm
         nodePackages.tailwindcss
@@ -88,6 +76,9 @@ in {
         fzf.enable = true;
         starship.enable = true;
       };
+      languages = {
+        python.enable = true;
+      }
       zsh.enable = true;
       fish.enable = true;
       services.waterNotifier = { enable = true; };
