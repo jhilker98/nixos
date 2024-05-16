@@ -9,9 +9,9 @@ in {
     programs = {
       fzf = {
         enable = true;
-        #enableZshIntegration = mkIf config.jhilker98.zsh.enable;
-        #enableBashIntegration = mkIf config.jhilker98.bash.enable;
-        #enableFishIntegration = mkIf config.jhilker98.fish.enable;
+        enableZshIntegration = config.jhilker98.zsh.enable;
+        enableBashIntegration = config.jhilker98.bash.enable;
+        enableFishIntegration = config.jhilker98.fish.enable;
       };
       bash.initExtra = ''
         source ${inputs.fzf-marks}/fzf-marks.plugin.zsh
