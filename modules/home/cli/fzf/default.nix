@@ -24,9 +24,6 @@ in {
         source ${inputs.fzf-marks}/conf.d/fzf-marks.plugin.fish
       '';
     };
-    home.file.".fzf-marks".source = (pkgs.formats.keyValue {}).generate "bookmarks" {
-    "dotfiles" = "/home/jhilker/.dotfiles";
-    };
   };
 
 }
