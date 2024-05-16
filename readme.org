@@ -1,7 +1,7 @@
 #+title: NixOS Dotfiles
 #+HTML: <a href="https://builtwithnix.org"><img src="https://img.shields.io/static/v1?logo=nixos&logoColor=white&label=&message=Built%20with%20Nix&color=41439a&style=for-the-badge"></a>
-#+HTML: <a href="https://github.com/jhilker1/nixos-dots/blob/main/LICENSE"><img src="https://img.shields.io/github/license/jhilker98/nixos-dots?style=for-the-badge"></a>
-#+HTML: <a href="https://github.com/snowfallorg/lib"><img alt="Powered by Snowfall" src="https://img.shields.io/badge/Powered_by-Snowfall-red?style=for-the-badge&logo=nixos&logoColor=d8dee9&labelColor=5e81ac&color=d8dee9></a>
+#+HTML: <a href="https://github.com/jhilker98/dotfiles/blob/main/LICENSE"><img src="https://img.shields.io/github/license/jhilker98/nixos-dots?style=for-the-badge"></a>
+
 Hello, and welcome to my dotfiles.
 
 * Installation
