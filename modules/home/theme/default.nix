@@ -2,9 +2,16 @@
 with lib;
 with lib.jhilker98;
 
-let cfg = config.jhilker98.theme;
+let
+  inherit (lib.jhilker98) mkOpt enabled;
+  cfg = config.jhilker98.theme;
 in {
-  options.jhilker98.theme = { enable = mkEnableOption "Theme"; };
+  options.jhilker98.theme = {
+    enable = mkEnableOption "Theme";
+    colors = with config.lib.stylix.colors; {
+
+    };
+  };
 
   config = mkIf cfg.enable {
     stylix = {
