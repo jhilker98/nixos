@@ -1,6 +1,5 @@
 { lib, config, pkgs, ... }:
 
-with lib;
 with lib.jhilker98;
 let cfg = config.jhilker98.nixos.common;
 in {
@@ -17,13 +16,30 @@ in {
           isNormalUser = true;
           isSystemUser = false;
           extraGroups =
-            [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+            [ "wheel" "networkmanager" "audio" ]; # Enable ‘sudo’ for the user.
           initialPassword = "jhilker";
           shell = pkgs.fish;
           home = "/home/jhilker";
-        createHome = "false";
         };
       };
+    };
+    programs.gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+      pinentryFlavor = "gtk2";
+    };
+    security = {
+      sudo.enable = false;
+      doas = {
+        enable = true;
+        extraRules = [{
+          users = [ "jhilker" ];
+          keepEnv = true;
+          persist = true;
+        }];
+      };
+      pam.services = { sddm.enableKwallet = true; };
+      polkit.enable = true;
     };
   };
 }
