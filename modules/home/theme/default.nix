@@ -11,6 +11,8 @@ in {
     colors = with config.lib.stylix.colors; {
 
     };
+    effects = {};
+    fonts = {};
   };
 
   config = mkIf cfg.enable {
