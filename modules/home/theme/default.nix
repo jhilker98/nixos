@@ -9,7 +9,15 @@ in {
   options.jhilker98.theme = {
     enable = mkEnableOption "Theme";
     colors = with config.lib.stylix.colors; {
-
+      black = mkOpt types.str "${base00}" "My black color";
+      red = mkOpt types.str "${base08}" "My red color";
+      green = mkOpt types.str "${base0B}" "My green color";
+      orange = mkOpt types.str "${base09}" "My orange color";
+      yellow  = mkOpt types.str "${base0A}" "My yellow color";
+      blue = mkOpt types.str "${base0D}" "My blue color";
+      purple = mkOpt types.str "${base0E}" "My purple color";
+      teal = mkOpt types.str "${base0C}" "My teal color";
+      white = mkOpt types.str "${base06}" "My white color";
     };
     effects = {};
     fonts = {
