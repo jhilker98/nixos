@@ -12,7 +12,13 @@ in {
 
     };
     effects = {};
-    fonts = {};
+    fonts = {
+     sans = mkOption types.str "" "My default sans-serif font.";
+     serif = mkOption types.str "" "My default serif font.";
+
+     mono = mkOption types.str "" "My default monospace font.";
+     emoji = mkOption types.str "" "My default emoji font.";
+    };
   };
 
   config = mkIf cfg.enable {
