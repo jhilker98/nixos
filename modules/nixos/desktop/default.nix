@@ -22,8 +22,11 @@ in {
           };
         };
       };
-      displaymanager = { sddm = { enable = true; }; };
-      defaultSession = "none+qtile";
+      displaymanager = {
+        sddm = { enable = true; };
+
+        defaultSession = "none+qtile";
+      };
     };
   };
 }
