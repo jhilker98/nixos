@@ -8,6 +8,7 @@ in {
     enable = mkEnableOption "Core NixOS module";
   };
   config = mkIf cfg.enable {
+    nix.package = pkgs.nixFlakes;
     system.stateVersion = "23.11";
     services = { accounts-daemon.enable = true; };
     users = {

@@ -9,6 +9,7 @@ inputs,
 
 # All other arguments come from the home home.
 config, ... }:
+with lib;
 with lib.jhilker98; {
   jhilker98 = {
     common.enable = true;
