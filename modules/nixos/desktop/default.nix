@@ -22,7 +22,7 @@ in {
           };
         };
       };
-      displaymanager = {
+      displayManager = {
         sddm = { enable = true; };
 
         defaultSession = "none+qtile";
