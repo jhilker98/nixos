@@ -51,6 +51,7 @@ in {
         mermaid-cli
         units
         snowfallorg.flake
+        sops
       ];
       shellAliases = {
         "ls" = "${pkgs.eza}/bin/eza -alh --group-directories-first";
