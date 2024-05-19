@@ -9,25 +9,21 @@ in {
     useWayland = mkEnableOption "Use Wayland instead of X11";
   };
   config = mkIf cfg.enable {
-    services.xserver = {
-      enable = true;
-      layout = "us";
-      displayManager = {
-        defaultSession = "none+qtile";
-        sddm = {
-          enable = true;
+    services = {
+      xserver = {
+        enable = true;
+        xkb.layout = "us";
+        windowManager = {
+          qtile = {
+            enable = true;
+            extraPackages = python3Packages:
+              with python3Packages;
+              [ qtile-extras ];
+          };
         };
       };
-      windowManager = {
-        qtile = {
-          enable = true;
-          extraPackages = python3Packages:
-            with python3Packages;
-            [
-              qtile-extras
-            ];
-        };
-      };
+      displaymanager = { sddm = { enable = true; }; };
+      defaultSession = "none+qtile";
     };
   };
 }
