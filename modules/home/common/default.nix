@@ -69,6 +69,11 @@ in {
       #  dotDir = ".config/zsh";
       #};
     };
+    sops = {
+      defaultSopsFile = ../../../secrets/secrets.yaml;
+      defaultSopsFormat = "yaml";
+      age.keyFile = "/home/jhilker/.config/sops/age/keys.txt";
+    };
     jhilker98 = {
       starship.enable = true;
       development = {
