@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, inputs, ... }:
 
 with lib;
 with lib.jhilker98;
@@ -25,10 +25,15 @@ in {
         };
       };
     };
-    programs.gnupg.agent = {
+    programs = {
+      gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
-      pinentryFlavor = "gtk2";
+      # pinentryFlavor = "gtk2";
+      pinentryPackage = pkgs.pinentry-gtk2;
+    };
+      zsh.enable = true;
+      fish.enable = true;
     };
     security = {
       sudo.enable = false;
@@ -44,4 +49,5 @@ in {
       polkit.enable = true;
     };
   };
+  imports = [ inputs.disko.nixosModules.disko];
 }

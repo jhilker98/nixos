@@ -72,7 +72,6 @@
             sops-nix.nixosModules.sops
           ];
         hosts = {
-
         };
       };
       homes = {
