@@ -3,8 +3,8 @@
 {
   jhilker98 = {
     common.enable = true;
-    development = { emacs.enable = false; };
-    langs = { latex.enable = false; };
+    development = { emacs.enable = lib.mkDefault false; };
+    langs = { latex.enable = lib.mkDefault false; };
     git.enable = true;
   };
 }
