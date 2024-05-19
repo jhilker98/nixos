@@ -18,7 +18,9 @@ with lib.jhilker98; {
       emacs.enable = true;
       nixvim.enable = true;
     };
-
+    langs = {
+      latex.enable = false;
+    };
     bash.enable = true;
     zsh.enable = true;
     git.enable = true;
