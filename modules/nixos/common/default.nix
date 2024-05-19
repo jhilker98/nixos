@@ -49,5 +49,4 @@ in {
       polkit.enable = true;
     };
   };
-  imports = [ inputs.disko.nixosModules.disko];
 }

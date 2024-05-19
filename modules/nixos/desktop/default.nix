@@ -16,7 +16,6 @@ in {
         defaultSession = "none+qtile";
         sddm = {
           enable = true;
-          theme = pkgs.sddm-sugar-dark;
         };
       };
       windowManager = {

@@ -13,8 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    nix.package = pkgs.nixFlakes;
-
     home = {
       stateVersion = "23.11";
       username = "jhilker";
