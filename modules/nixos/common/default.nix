@@ -1,5 +1,6 @@
 { lib, config, pkgs, ... }:
 
+with lib;
 with lib.jhilker98;
 let cfg = config.jhilker98.nixos.common;
 in {
@@ -8,7 +9,7 @@ in {
   };
   config = mkIf cfg.enable {
     system.stateVersion = "23.11";
-    services = { account-daemon.enable = true; };
+    services = { accounts-daemon.enable = true; };
     users = {
       defaultUserShell = pkgs.zsh;
       users = {
