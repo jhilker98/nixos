@@ -30,15 +30,15 @@
       (stdenv.mkDerivation {
         pname = "symbols-nerd-font";
         version = "2.2.0";
-        src = fetchFromGitHub {
+        src = pkgs.fetchFromGitHub {
           owner = "ryanoasis";
           repo = "nerd-fonts";
           rev = "a07648b1eef52c87670fcd5b567c55493c0b3205"; ## nerd_font_symbols
           sha256 = "1g60wi07awxliq9gfypsvp2wjgpg7qz6k1k7iph7iqmjydan3b9k"; ## nerd_font_symbols
-          sparseCheckout = ''
-            10-nerd-font-symbols.conf
-            patched-fonts/NerdFontsSymbolsOnly
-          '';
+          sparseCheckout = [
+            "10-nerd-font-symbols.conf"
+            "patched-fonts/NerdFontsSymbolsOnly"
+          ];
         };
         dontConfigure = true;
         dontBuild = true;
