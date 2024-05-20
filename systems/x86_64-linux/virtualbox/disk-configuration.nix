@@ -11,11 +11,9 @@
         type = "disk";
         device = "/dev/sda";
         content = {
-          type = "table";
-          format = "msdos";
-          partitions = [
-            {
-              name = "swap";
+          type = "gpt";
+          partitions = {
+            swap = {
               start = "1MiB";
               end = "-8GB";
               content = {
@@ -23,9 +21,9 @@
                 discardPolicy = "both";
                 resumeDevice = true; # resume from hiberation from this device
               };
-            }
-            {
-              name = "root";
+            };
+
+            root = {
               part-type = "primary";
               start = "-8GB";
               end = "100%";
@@ -35,8 +33,8 @@
                 format = "ext4";
                 mountpoint = "/";
               };
-            }
-          ];
+            };
+          };
         };
       };
     };
