@@ -9,27 +9,18 @@
     disk = {
       main = {
         type = "disk";
-        device = "/dev/disk/by-label/nixos";
+        device = "/dev/sda";
         content = {
           type = "gpt";
           partitions = {
-            TOW-BOOT-FI = {
-              priority = 1;
-              type = "EF00";
-              size = "32M";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = null;
-              };
-              hybrid = {
-                mbrPartitionType = "0x0c";
-                mbrBootableFlag = false;
-              };
+            boot = {
+              size = "1M";
+              type = "EF02"; # for grub MBR
+              priority = 1; # Needs to be first partition
             };
             ESP = {
-              type = "EF00";
               size = "512M";
+              type = "EF00";
               content = {
                 type = "filesystem";
                 format = "vfat";
@@ -46,6 +37,7 @@
             };
           };
         };
+
       };
     };
   };
