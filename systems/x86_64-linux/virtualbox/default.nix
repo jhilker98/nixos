@@ -1,13 +1,13 @@
 { lib, pkgs, inputs, system, target, format, virtual, systems, config, ... }: {
 
-  imports = [
-    ./disk-configuration.nix
-  ];
+#  imports = [
+#    ./disk-configuration.nix
+#  ];
   networking.hostName = "virtualbox";
   boot.loader = {
     grub = {
       enable = true;
-      device = "nodev";
+      device = "/dev/sda";
     };
   };
   jhilker98 = {
