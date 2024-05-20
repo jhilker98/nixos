@@ -11,33 +11,32 @@
         type = "disk";
         device = "/dev/sda";
         content = {
-          type = "gpt";
-          partitions = {
-            boot = {
-              size = "1M";
-              type = "EF02"; # for grub MBR
-              priority = 1; # Needs to be first partition
-            };
-            ESP = {
-              size = "512M";
-              type = "EF00";
+          type = "table";
+          format = "msdos";
+          partitions = [
+            {
+              name = "swap"
+              start = "1MiB";
+              end = "-8GB";
               content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
+                type = "swap";
+                discardPolicy = "both";
+                resumeDevice = true; # resume from hiberation from this device
               };
-            };
-            root = {
-              size = "100%";
+            {
+              name = "root";
+              part-type = "primary";
+              start = "-8GB";
+              end = "100%";
+              bootable = true;
               content = {
                 type = "filesystem";
                 format = "ext4";
                 mountpoint = "/";
               };
-            };
-          };
+            }
+          ];
         };
-
       };
     };
   };
