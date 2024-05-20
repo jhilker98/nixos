@@ -15,7 +15,7 @@
           format = "msdos";
           partitions = [
             {
-              name = "swap"
+              name = "swap";
               start = "1MiB";
               end = "-8GB";
               content = {
@@ -23,6 +23,7 @@
                 discardPolicy = "both";
                 resumeDevice = true; # resume from hiberation from this device
               };
+            }
             {
               name = "root";
               part-type = "primary";
