@@ -1,34 +1,28 @@
-{ inputs, ... }:
-
 {
-  imports = [
-
-    inputs.disko.nixosModules.disko
-  ];
   disko.devices = {
     disk = {
       main = {
         type = "disk";
-        device = "/dev/sda";
+        device = "/dev/disk/by-id/ata-Samsung_SSD_850_EVO_250GB_S21PNXAGB12345";
         content = {
           type = "gpt";
           partitions = {
-            swap = {
-              start = "1MiB";
-              end = "-8GB";
+            boot = {
+              size = "1M";
+              type = "EF02"; # for grub MBR
+              priority = 1; # Needs to be first partition
+            };
+            ESP = {
+              size = "512M";
+              type = "EF00";
               content = {
-                type = "swap";
-                discardPolicy = "both";
-                resumeDevice = true; # resume from hiberation from this device
-                flags = ["bios_grub"];
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
               };
             };
-
             root = {
-              part-type = "primary";
-              start = "-8GB";
-              end = "100%";
-              bootable = true;
+              size = "100%";
               content = {
                 type = "filesystem";
                 format = "ext4";
@@ -41,3 +35,4 @@
     };
   };
 }
+
