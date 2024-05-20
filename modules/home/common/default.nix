@@ -17,36 +17,8 @@ in {
       stateVersion = "23.11";
       username = "jhilker";
       packages = with pkgs; [
-        qpdf
-        cheat
-        zlib
-        act
-        tldr
-        wakatime
-        ttfautohint
-        nodejs
-        nodePackages.npm
-        nodePackages.tailwindcss
-        nodePackages.postcss-cli
-        nodePackages.typescript
-        nodePackages.degit
-        nodePackages.postcss
-        rustc
-        cargo
-        go
-        thefuck
-        jq
-        pup
-        #libby
-        hugo
-        nix-prefetch-git
-        ranger
-        nodePackages.pnpm
-        graphite-cli
-        bitwarden-cli
         nixfmt
         plantuml
-        mermaid-cli
         units
         snowfallorg.flake
         sops

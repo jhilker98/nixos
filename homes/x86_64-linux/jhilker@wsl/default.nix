@@ -26,4 +26,33 @@ with lib.jhilker98; {
 
     git.enable = true;
   };
+  home.packages = with pkgs; [
+    qpdf
+    cheat
+    zlib
+    act
+    tldr
+    wakatime
+    ttfautohint
+    nodejs
+    nodePackages.npm
+    nodePackages.tailwindcss
+    nodePackages.postcss-cli
+    nodePackages.typescript
+    nodePackages.degit
+    nodePackages.postcss
+    rustc
+    cargo
+    go
+    thefuck
+    jq
+    pup
+    #libby
+    hugo
+    nix-prefetch-git
+    ranger
+    nodePackages.pnpm
+    graphite-cli
+    bitwarden-cli
+  ];
 }
