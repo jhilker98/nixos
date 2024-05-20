@@ -73,6 +73,7 @@
         modules.nixos = with inputs;
           [
             sops-nix.nixosModules.sops
+            disko.nixosModules.disko
           ];
         hosts = {
         };
