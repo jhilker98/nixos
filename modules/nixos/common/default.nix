@@ -41,6 +41,7 @@ in {
       };
       zsh.enable = true;
       fish.enable = true;
+      dconf.enable = true;
     };
     security = {
       sudo.enable = false;
