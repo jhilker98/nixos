@@ -28,6 +28,11 @@ in {
     };
     programs = {
       git.enable = true;
+      neovim = {
+        enable = true;
+        viAlias = true;
+        vimAlias = true;
+      };
       gnupg.agent = {
         enable = true;
         enableSSHSupport = true;
