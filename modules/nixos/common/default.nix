@@ -6,7 +6,6 @@ let cfg = config.jhilker98.nixos.common;
 in {
   options.jhilker98.nixos = {
     common = { enable = mkEnableOption "Core NixOS module"; };
-    theme = { enable = mkEnableOption "Stylix theming"; };
   };
   config = mkIf cfg.enable {
     nix.package = pkgs.nixFlakes;

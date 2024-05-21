@@ -74,7 +74,6 @@
           [
             sops-nix.nixosModules.sops
             disko.nixosModules.disko
-            stylix.nixosModules.stylix
           ];
         hosts = {
         };
