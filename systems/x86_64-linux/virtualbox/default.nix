@@ -1,17 +1,15 @@
 { lib, pkgs, inputs, system, target, format, virtual, systems, config, ... }: {
 
-    imports = [
-      ./disk-configuration.nix
-    ];
+  #imports = [
+  #  ./disk-configuration.nix
+  #];
 
-  
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   #boot.loader.grub.version = 2;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.efiInstallAsRemovable = true;
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  
 
   virtualisation.virtualbox.guest.enable = true;
   boot.initrd.availableKernelModules =
@@ -33,4 +31,40 @@
     lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   system.stateVersion = "23.11";
+
+  disko.devices = {
+    disk = {
+      main = {
+        type = "disk";
+        device = "/dev/sda";
+        content = {
+          type = "gpt";
+          partitions = {
+            boot = {
+              size = "1M";
+              type = "EF02"; # for grub MBR
+              priority = 1; # Needs to be first partition
+            };
+            ESP = {
+              size = "512M";
+              type = "EF00";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+              };
+            };
+            root = {
+              size = "100%";
+              content = {
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/";
+              };
+            };
+          };
+        };
+      };
+    };
+  };
 }
