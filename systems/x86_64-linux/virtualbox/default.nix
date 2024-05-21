@@ -4,7 +4,7 @@
       ./disk-configuration.nix
     ];
 
-
+  
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   #boot.loader.grub.version = 2;
@@ -31,4 +31,6 @@
 
   hardware.cpu.intel.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  system.stateVersion = "23.11";
 }
