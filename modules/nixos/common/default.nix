@@ -4,13 +4,15 @@ with lib;
 with lib.jhilker98;
 let cfg = config.jhilker98.nixos.common;
 in {
-  options.jhilker98.nixos.common = {
-    enable = mkEnableOption "Core NixOS module";
+  options.jhilker98.nixos = {
+    common = { enable = mkEnableOption "Core NixOS module"; };
+    theme = { enable = mkEnableOption "Stylix theming"; };
   };
   config = mkIf cfg.enable {
     nix.package = pkgs.nixFlakes;
     system.stateVersion = "23.11";
     services = { accounts-daemon.enable = true; };
+
     users = {
       defaultUserShell = pkgs.zsh;
       users = {
@@ -27,11 +29,11 @@ in {
     };
     programs = {
       gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-      # pinentryFlavor = "gtk2";
-      pinentryPackage = pkgs.pinentry-gtk2;
-    };
+        enable = true;
+        enableSSHSupport = true;
+        # pinentryFlavor = "gtk2";
+        pinentryPackage = pkgs.pinentry-gtk2;
+      };
       zsh.enable = true;
       fish.enable = true;
     };
