@@ -26,4 +26,7 @@ with lib.jhilker98; {
     git.enable = true;
     theme.enable = true;
   };
+  home.packages = with pkgs; [
+    iamb
+  ];
 }
