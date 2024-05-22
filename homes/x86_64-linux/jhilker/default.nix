@@ -28,5 +28,6 @@ with lib.jhilker98; {
   };
   home.packages = with pkgs; [
     iamb
+    jq
   ];
 }
