@@ -11,7 +11,6 @@ inputs,
 config, ... }:
 with lib.jhilker98; {
 
-  nix.package = pkgs.nixFlakes;
   jhilker98 = {
     common.enable = true;
     starship.enable = true;
