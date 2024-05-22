@@ -1,10 +1,6 @@
 { lib, pkgs, inputs, system, target, format, virtual, systems, config, ... }: {
 
   imports = [
-    "${
-      builtins.fetchTarball
-      "https://github.com/nix-community/disko/archive/master.tar.gz"
-    }/module.nix"
     ./disk-config.nix
   ];
 
