@@ -1,6 +1,12 @@
 { lib, pkgs, inputs, system, target, format, virtual, systems, config, ... }: {
 
-  imports = [ ./disk-config.nix ];
+  imports = [
+    "${
+      builtins.fetchTarball
+      "https://github.com/nix-community/disko/archive/master.tar.gz"
+    }/module.nix"
+    ./disk-config.nix
+  ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
