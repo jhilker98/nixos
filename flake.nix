@@ -29,10 +29,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix.url = "github:Mic92/sops-nix";
-    #disko = {
-    #  url = "github:nix-community/disko";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = inputs:
     inputs.snowfall-lib.mkFlake {
@@ -69,7 +69,7 @@
         modules.nixos = with inputs;
           [
             sops-nix.nixosModules.sops
-            #disko.nixosModules.disko
+            disko.nixosModules.disko
           ];
         hosts = {
         };
