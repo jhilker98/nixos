@@ -237,10 +237,6 @@
 (after! magit-delta
   (add-hook! 'magit-mode #'magit-delta-mode))
 
-(map! :after casual-dired
-      :leader
-      (:desc "Open control menu." "?" #'casual-dired-tmenu))
-
 (after! citar
   (setq citar-bibliography '("~/Dropbox/biblio/main.bib")
         citar-symbols
