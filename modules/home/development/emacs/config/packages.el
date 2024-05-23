@@ -61,9 +61,8 @@
 
 (package! lorem-ipsum)
 
-(when (featurep! :emacs dired +casual)
-  (package! casual-dired
-    :recipe (:host github :repo "kickingvegas/casual-dired")))
+(package! casual-dired
+    :recipe (:host github :repo "kickingvegas/casual-dired"))
 
 (when (featurep! :tools biblio)
   (package! ebib))
