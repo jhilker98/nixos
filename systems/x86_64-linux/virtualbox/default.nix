@@ -1,8 +1,8 @@
 { lib, pkgs, inputs, system, target, format, virtual, systems, config, ... }: {
 
-  #imports = [
-  #  ./disk-config.nix
-  #];
+  imports = [
+    ./disk-config.nix
+  ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
