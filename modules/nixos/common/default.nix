@@ -2,15 +2,11 @@
 
 with lib;
 with lib.jhilker98;
-let cfg = config.jhilker98.nixos.common;
+let cfg = config.jhilker98.common;
 in {
-  options.jhilker98.nixos = {
-    common = { enable = mkEnableOption "Core NixOS module"; };
-  };
+  options.jhilker98.commmon = { enable = mkEnableOption "Core NixOS module"; };
   config = mkIf cfg.enable {
-    nix = {
-      package = pkgs.nixFlakes;
-    };
+    nix = { package = pkgs.nixFlakes; };
     system.stateVersion = "23.11";
     services = { accounts-daemon.enable = true; };
 

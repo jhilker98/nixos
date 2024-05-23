@@ -2,11 +2,12 @@
 
 with lib;
 with lib.jhilker98;
-let cfg = config.jhilker98.nixos.desktop;
+let cfg = config.jhilker98.desktop;
 in {
-  options.jhilker98.nixos.desktop = {
+  options.jhilker98.desktop = {
     enable = mkEnableOption "Desktop";
     useWayland = mkEnableOption "Use Wayland instead of X11";
+    usePicom = mkEnableOption "Use a compositor";
   };
   config = mkIf cfg.enable {
     services = {
