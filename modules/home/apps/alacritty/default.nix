@@ -7,6 +7,8 @@ in {
     enable = mkEnableOption "Enable alacritty terminal";
   };
   config = mkIf cfg.enable {
-
+    programs.alacritty = {
+      enable = true;
+    };
   };
 }
