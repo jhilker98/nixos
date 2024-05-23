@@ -28,7 +28,7 @@ in {
           isSystemUser = false;
           extraGroups =
             [ "wheel" "networkmanager" "audio" ]; # Enable ‘sudo’ for the user.
-          initialPassword = sops.secrets.hosts.users.jhilker;
+          initialPassword = "jhilker";
           shell = pkgs.fish;
           home = "/home/jhilker";
         };
