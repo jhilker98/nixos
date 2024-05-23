@@ -34,6 +34,9 @@ in {
         };
       };
     };
+    environment.systemPackages = with pkgs; [
+      sops
+    ];
     programs = {
       git.enable = true;
       neovim = {
