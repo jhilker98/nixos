@@ -2,14 +2,12 @@
 
 with lib;
 with lib.jhilker98;
+
 let cfg = config.jhilker98.common;
 in {
-  options.jhilker98.commmon = { enable = mkEnableOption "Core NixOS module"; };
-  config = mkIf cfg.enable {
-    nix = { package = pkgs.nixFlakes; };
-    system.stateVersion = "23.11";
-    services = { accounts-daemon.enable = true; };
+  options.jhilker98.common = { enable = mkEnableOption "Common"; };
 
+  config = mkIf cfg.enable {
     users = {
       defaultUserShell = pkgs.zsh;
       users = {
@@ -55,4 +53,5 @@ in {
       polkit.enable = true;
     };
   };
+
 }
