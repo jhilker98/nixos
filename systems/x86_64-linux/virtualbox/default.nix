@@ -20,7 +20,7 @@
   boot.extraModulePackages = [ ];
   fileSystems."/" = {
     device = "/dev/disk/by-label/nixos";
-    type = "ext4";
+    fsType = "ext4";
   };
 
   swapDevices = [{ device = "/dev/disk/by-label/swap"; }];
