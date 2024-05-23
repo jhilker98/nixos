@@ -70,6 +70,7 @@
           [
             sops-nix.nixosModules.sops
             disko.nixosModules.disko
+            stylix.nixosModules.stylix
           ];
         hosts = {
         };
@@ -77,7 +78,6 @@
       homes = {
         modules = with inputs; [
           nixvim.homeManagerModules.nixvim
-          stylix.homeManagerModules.stylix
           sops-nix.homeManagerModules.sops
         ];
         users = { "jhilker@wsl".modules = with inputs; [ ]; };
