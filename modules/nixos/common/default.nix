@@ -8,6 +8,18 @@ in {
   options.jhilker98.common = { enable = mkEnableOption "Common"; };
 
   config = mkIf cfg.enable {
+  nix = {
+    package = pkgs.nixFlakes;
+    settings = {
+      extraExperimentalFeaatures = ["nix-command" "flakes"];
+      auto-optimise-store = true;
+    };
+    gc = {
+      automatic = true;
+      dates = "daily";
+    };
+    optimise.automatic = true;
+  };
     users = {
       defaultUserShell = pkgs.zsh;
       users = {
