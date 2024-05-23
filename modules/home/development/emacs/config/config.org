@@ -648,9 +648,13 @@ I also use [[https://wakatime.com][Wakatime]] to manage my time spent in develop
 ** Dired
 I like to have a quick menu for accessing commmands in dired.
 #+begin_src emacs-lisp :tangle packages.el
+(when (featurep! :emacs dired +casual)
+
 (package! casual-dired
-    :recipe (:host github :repo "kickingvegas/casual-dired"))
+    :recipe (:host github :repo "kickingvegas/casual-dired")))
 #+end_src
+
+
 ** Ebib
 I like using ebib as a bibliography manager.
 #+begin_src emacs-lisp :tangle packages.el
