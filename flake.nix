@@ -5,7 +5,7 @@
     # The name "snowfall-lib" is required due to how Snowfall Lib processes your
     # flake's inputs.
     snowfall-lib = {
-      url = "github:snowfallorg/lib/dev";
+      url = "github:snowfallorg/lib?rev=d6b766939af0350fcfad505cf3b693dbaf297c3b";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
