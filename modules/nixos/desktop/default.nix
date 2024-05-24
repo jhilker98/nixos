@@ -24,10 +24,16 @@ in {
         };
       };
       displayManager = {
-        sddm = { enable = true; };
+        sddm = { 
+          enable = true; 
+          theme = "sddm-sugar-dark";
+        };
 
         defaultSession = "none+qtile";
       };
     };
+    environment.systemPackages = with pkgs; [
+      (callPackage ../../../packages/sddm-sugar-dark{})
+    ];
   };
 }
