@@ -26,7 +26,7 @@ in {
       displayManager = {
         sddm = { 
           enable = true; 
-          theme = "sddm-sugar-dark";
+          #theme = "sddm-sugar-dark";
         };
 
         defaultSession = "none+qtile";
