@@ -26,15 +26,12 @@ in {
       displayManager = {
         sddm = { 
           enable = true; 
-          #theme = "sddm-sugar-dark";
         };
 
         defaultSession = "none+qtile";
       };
     };
     environment.systemPackages = with pkgs; [
-      (callPackage ../../../packages/sddm-sugar-dark{})
-      #self.packages.x86_64-linux.sddm-sugar-dark
     ];
   };
 }
