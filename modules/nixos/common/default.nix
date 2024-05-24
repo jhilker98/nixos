@@ -67,6 +67,14 @@ in {
       pam.services = { sddm.enableKwallet = true; };
       polkit.enable = true;
     };
+    system.activationScripts = {
+        base-dirs = {
+          text = ''
+            mkdir -p /nix/var/nix/profiles/per-user/jhilker
+          '';
+          deps = [ ];
+        };
+      };
   };
 
 }
