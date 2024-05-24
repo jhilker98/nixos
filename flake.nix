@@ -71,6 +71,7 @@
             sops-nix.nixosModules.sops
             disko.nixosModules.disko
             stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager
           ];
         hosts = {
         };
