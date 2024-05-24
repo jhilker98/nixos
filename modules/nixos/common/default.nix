@@ -8,18 +8,18 @@ in {
   options.jhilker98.common = { enable = mkEnableOption "Common"; };
 
   config = mkIf cfg.enable {
-  nix = {
-    package = pkgs.nixFlakes;
-    settings = {
-      #extraExperimentalFeaatures = ["nix-command" "flakes"];
-      auto-optimise-store = true;
+    nix = {
+      package = pkgs.nixFlakes;
+      settings = {
+        #extraExperimentalFeaatures = ["nix-command" "flakes"];
+        auto-optimise-store = true;
+      };
+      gc = {
+        automatic = true;
+        dates = "daily";
+      };
+      optimise.automatic = true;
     };
-    gc = {
-      automatic = true;
-      dates = "daily";
-    };
-    optimise.automatic = true;
-  };
     users = {
       defaultUserShell = pkgs.zsh;
       users = {
@@ -34,15 +34,11 @@ in {
         };
       };
     };
-    environment.systemPackages = with pkgs; [
-      sops
-    ];
+    environment.systemPackages = with pkgs; [ sops ];
     programs = {
       git = {
         enable = true;
-        config = {
-          safe.directory = "*";
-        };
+        config = { safe.directory = "*"; };
       };
       neovim = {
         enable = true;
@@ -68,7 +64,6 @@ in {
       #    keepEnv = true;
       #    persist = true;
       #  }];
-      };
       pam.services = { sddm.enableKwallet = true; };
       polkit.enable = true;
     };
