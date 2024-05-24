@@ -11,7 +11,7 @@ in {
   nix = {
     package = pkgs.nixFlakes;
     settings = {
-      extraExperimentalFeaatures = ["nix-command" "flakes"];
+      #extraExperimentalFeaatures = ["nix-command" "flakes"];
       auto-optimise-store = true;
     };
     gc = {
