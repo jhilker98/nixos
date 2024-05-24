@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 
-{
+with lib;
+with lib.jhilker98; {
   jhilker98 = {
     common.enable = true;
     development = { emacs.enable = lib.mkDefault false; };
