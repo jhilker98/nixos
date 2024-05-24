@@ -60,14 +60,14 @@ in {
       dconf.enable = true;
     };
     security = {
-      sudo.enable = false;
-      doas = {
-        enable = true;
-        extraRules = [{
-          users = [ "jhilker" ];
-          keepEnv = true;
-          persist = true;
-        }];
+      sudo.enable = true;
+      #doas = {
+      #  enable = true;
+      #  extraRules = [{
+      #    users = [ "jhilker" ];
+      #    keepEnv = true;
+      #    persist = true;
+      #  }];
       };
       pam.services = { sddm.enableKwallet = true; };
       polkit.enable = true;
