@@ -38,7 +38,12 @@ in {
       sops
     ];
     programs = {
-      git.enable = true;
+      git = {
+        enable = true;
+        config = {
+          safe.directory = "*";
+        };
+      };
       neovim = {
         enable = true;
         viAlias = true;
