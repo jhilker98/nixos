@@ -25,13 +25,15 @@ in {
       };
       displayManager = {
         sddm = { 
-          enable = true; 
+          enable = true;
+          theme = "sugar-dark";
         };
 
         defaultSession = "none+qtile";
       };
     };
     environment.systemPackages = with pkgs; [
+      jhilker98.sddm-sugar-dark
     ];
   };
 }
