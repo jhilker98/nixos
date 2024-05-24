@@ -33,7 +33,7 @@ in {
       };
     };
     environment.systemPackages = with pkgs; [
-      (callPackage ../../../packages/sddm-sugar-dark{})
+      #(callPackage ../../../packages/sddm-sugar-dark{})
     ];
   };
 }
