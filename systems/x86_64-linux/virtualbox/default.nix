@@ -32,6 +32,8 @@
 
     system.stateVersion = "23.11";
     jhilker98 = {
+      common.enable = true;
+      desktop.enable = true;
       theme.enable = true;
     };
 
