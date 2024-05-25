@@ -26,6 +26,9 @@ with lib.jhilker98; {
     zsh.enable = true;
     git.enable = true;
     theme.enable = true;
+    apps = {
+      lazygit.enable = true;
+    };
   };
   home.packages = with pkgs; [
     iamb

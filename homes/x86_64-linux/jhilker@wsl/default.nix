@@ -24,6 +24,9 @@ with lib.jhilker98; {
     theme.enable = true;
 
     git.enable = true;
+    apps = {
+      lazygit.enable = true;
+    };
   };
   home.packages = with pkgs; [
     qpdf
