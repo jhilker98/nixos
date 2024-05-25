@@ -34,7 +34,7 @@ in {
         };
       };
     };
-    environment.systemPackages = with pkgs; [ sops ];
+    environment.systemPackages = with pkgs; [ sops mkpasswd whois ];
     programs = {
       git = {
         enable = true;
