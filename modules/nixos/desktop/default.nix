@@ -24,7 +24,7 @@ in {
         };
       };
       displayManager = {
-        sddm = { 
+        sddm = {
           enable = true;
           theme = "sugar-dark";
         };
@@ -33,6 +33,7 @@ in {
       };
     };
     environment.systemPackages = with pkgs; [
+      libsForQt5.qt5.qtgraphicaleffects
       jhilker98.sddm-sugar-dark
     ];
   };
