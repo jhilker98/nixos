@@ -10,12 +10,37 @@ in {
       nixvim = {
         enable = true;
         defaultEditor = true;
+        opts = {
+          number = true;
+          relativenumber = true;
+          shiftwidth = 2;
+        };
         plugins = {
           lightline.enable = true;
           surround.enable = true;
           startify.enable = true;
           fugitive.enable = true;
-          lsp.enable = true;
+          direnv.enable = true;
+          comment.enable = true;
+          todo-comments = {
+            enable = true;
+          };
+          obsidian = {
+            enable = true;
+            settings = {
+              workspaces = [
+                {
+                  name = "Vault";
+                  path = "~/Dropbox/Obsidian";
+                }
+              ];
+            };
+          };
+
+          lsp = {
+            enable = true;
+            servers = {};
+          };
           which-key = {
             enable = true;
             registrations = { "<leader>g" = "Git"; };
