@@ -8,6 +8,14 @@ in {
     enable = mkEnableOption "Enable qtile";
   };
   config = mkIf cfg.enable {
-
+    xdg.configFile."qtile" = {
+      source = ./config;
+      recursive = true;
+    };
+    xdg.configFile."qtile/theme.py".text = let
+      colors = config.jhilker98.theme.colors;
+    in ''
+      wallpaper = ${inputs.nix-wallpaper.packages.${builtins.currentSystem}.default.override { preset = "gruvbox-dark"; }}
+    '';
   };
 }

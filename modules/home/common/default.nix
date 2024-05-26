@@ -44,6 +44,7 @@ in {
       defaultSopsFormat = "yaml";
       age.keyFile = "/home/jhilker/.config/sops/age/keys.txt";
     };
+    xdg.enable = true;
     jhilker98 = {
       starship.enable = true;
       development = {
