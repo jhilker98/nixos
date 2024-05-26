@@ -2,6 +2,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
     # The name "snowfall-lib" is required due to how Snowfall Lib processes your
     # flake's inputs.
     snowfall-lib = {
@@ -32,6 +33,9 @@
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-wallpaper = {
+      url = "github:lunik1/nix-wallpaper";
     };
   };
   outputs = inputs:
