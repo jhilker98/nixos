@@ -34,6 +34,7 @@ in {
     };
     environment.systemPackages = with pkgs; [
       libsForQt5.qt5.qtgraphicaleffects
+      feh
       jhilker98.sddm-sugar-dark
     ];
   };
