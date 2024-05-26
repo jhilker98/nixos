@@ -20,6 +20,7 @@ in {
       };
       optimise.automatic = true;
     };
+    home-manager.backupFileExtension = ".bak";
     users = {
       defaultUserShell = pkgs.zsh;
       users = {
