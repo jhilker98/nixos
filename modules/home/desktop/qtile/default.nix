@@ -1,4 +1,4 @@
-{config, lib, pkgs, inputs, ...}:
+{config, lib, pkgs, inputs, system ? "x86_64-linux", ...}:
 with lib;
 with lib.jhilker98;
 let
@@ -14,8 +14,9 @@ in {
     };
     xdg.configFile."qtile/theme.py".text = let
       colors = config.jhilker98.theme.colors;
+      wp = inputs.nix-wallpaper.packages.${system}.default.override { preset = "gruvbox-dark"; };
     in ''
-      wallpaper = ${inputs.nix-wallpaper.packages.${builtins.currentSystem}.default.override { preset = "gruvbox-dark"; }}
+     wallpaper = ${wp} 
     '';
   };
 }
