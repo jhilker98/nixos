@@ -16,7 +16,7 @@ in {
       colors = config.jhilker98.theme.colors;
       wp = inputs.nix-wallpaper.packages.${system}.default.override { preset = "gruvbox-dark"; };
     in ''
-     wallpaper = ${wp} 
+     wallpaper = ${wp}/nixos-wallpaper.png
     '';
   };
 }
