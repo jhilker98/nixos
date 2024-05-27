@@ -28,7 +28,7 @@ from libqtile import bar, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
-#from theme import wallpaper as wp
+from theme import wallpaper as wp
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -146,7 +146,8 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        #wallpaper = wp,
+        wallpaper = wp,
+        wallpaper_mode = "fill",
         bottom=bar.Bar(
             [
                 widget.CurrentLayout(),
