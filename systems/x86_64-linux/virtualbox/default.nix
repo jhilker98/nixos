@@ -33,7 +33,11 @@
     system.stateVersion = "23.11";
     jhilker98 = {
       common.enable = true;
-      desktop.enable = true;
+      desktop = {
+        enable = true;
+        useWayland = false;
+        usePicom = true;
+      };
       theme.enable = true;
     };
 

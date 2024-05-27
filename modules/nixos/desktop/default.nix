@@ -33,6 +33,9 @@ in {
         defaultSession = "none+qtile";
       };
     };
+    services.picom = mkIf cfg.usePicom {
+      enable = true;
+    };
     environment.systemPackages = with pkgs; [
       libsForQt5.qt5.qtgraphicaleffects
       feh
