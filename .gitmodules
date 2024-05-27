@@ -1,6 +1,0 @@
-[submodule "wiki/github"]
-	path = wiki/github
-	url = https://github.com/jhilker98/dotfiles.wiki.git
-[submodule "wiki/codeberg"]
-	path = wiki/codeberg
-	url = git@codeberg.org:jhilker98/dotfiles.wiki.git
