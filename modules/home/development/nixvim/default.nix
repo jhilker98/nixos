@@ -22,24 +22,25 @@ in {
           fugitive.enable = true;
           direnv.enable = true;
           comment.enable = true;
-          todo-comments = {
-            enable = true;
-          };
+          todo-comments = { enable = true; };
           obsidian = {
             enable = true;
             settings = {
-              workspaces = [
-                {
-                  name = "Vault";
-                  path = "~/Dropbox/Obsidian";
-                }
-              ];
+              workspaces = [{
+                name = "Vault";
+                path = "~/Dropbox/Obsidian";
+              }];
             };
           };
 
           lsp = {
             enable = true;
-            servers = {};
+            servers = {
+              bashls.enable = true;
+              pyright.enable = true;
+              gopls.enable = true;
+              nixd.enable = true;
+            };
           };
           which-key = {
             enable = true;
