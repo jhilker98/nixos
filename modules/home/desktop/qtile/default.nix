@@ -14,9 +14,8 @@ in {
     };
     xdg.configFile."qtile/theme.py".text = let
       colors = config.jhilker98.theme.colors;
-      wp = inputs.nix-wallpaper.packages.${system}.default.override { preset = "gruvbox-dark"; };
     in ''
-     wallpaper = "${wp}/share/wallpapers/nixos-wallpaper.png"
+     wallpaper = "${config.stylix.image}
     '';
   };
 }
