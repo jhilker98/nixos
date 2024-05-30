@@ -23,6 +23,10 @@ in {
           direnv.enable = true;
           comment.enable = true;
           todo-comments = { enable = true; };
+          cmp = {
+            enable = true;
+            autoEnableSources = true;
+          };
           obsidian = {
             enable = true;
             settings = {
