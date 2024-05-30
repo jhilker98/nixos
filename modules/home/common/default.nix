@@ -45,8 +45,18 @@ in {
       defaultSopsFormat = "yaml";
       age.keyFile = "/home/jhilker/.config/sops/age/keys.txt";
     };
-    xdg.enable = true;
-
+    xdg = {
+      enable = true;
+      mime = {
+        enable = true;
+      };
+      userDirs = {
+        enable = true;
+        extraConfig = {
+          "XDG_PROJECT_DIR" = "${config.home.homeDirectory}/Devel";
+        };
+      };
+    };
     jhilker98 = {
       starship.enable = true;
       development = {
