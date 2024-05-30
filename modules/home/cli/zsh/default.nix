@@ -14,7 +14,10 @@ in {
         syntaxHighlighting.enable = true;
         autocd = true;
         dotDir = ".config/zsh";
-        initExtra = "  export $(dbus-launch)\n";
+        initExtra = ''  
+          export $(dbus-launch)
+          eval $(${pkgs.thefuck}/bin/thefuck --alias)
+          '';
       };
     };
 

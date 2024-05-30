@@ -22,6 +22,12 @@ in {
           ]))
 
         nodePackages.pyright
-    ];
+      ];
+      programs.zsh.initExtra = ''
+      source ${pkgs.python3Packages.virtualenvwrapper}/bin/virtualenvwrapper.sh
+      '';
+      programs.bash.initExtra = ''
+      source ${pkgs.python3Packages.virtualenvwrapper}/bin/virtualenvwrapper.sh
+      '';
   };
 }
