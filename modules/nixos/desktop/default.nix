@@ -14,6 +14,7 @@ in {
       xserver = {
         enable = true;
         xkb.layout = "us";
+        desktopManager.xfce.enable = true;
         windowManager = {
           qtile = {
             enable = true;
