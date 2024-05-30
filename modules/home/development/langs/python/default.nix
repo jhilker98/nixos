@@ -23,6 +23,9 @@ in {
 
         nodePackages.pyright
       ];
+      home.sessionVariables = {
+        "VIRTUALENVWRAPPER_PYTHON" = "/home/jhilker/.nix-profile/bin/python3";
+      };
       programs.zsh.initExtra = ''
       source ${pkgs.python3Packages.virtualenvwrapper}/bin/virtualenvwrapper.sh
       '';

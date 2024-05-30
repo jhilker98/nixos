@@ -57,4 +57,7 @@ with lib.jhilker98; {
     graphite-cli
     bitwarden-cli
   ];
+home.sessionVariables = {
+        "VIRTUALENVWRAPPER_PYTHON" = "/home/jhilker/.nix-profile/bin/python3";
+      };
 }
