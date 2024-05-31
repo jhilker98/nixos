@@ -12,6 +12,7 @@ in {
         enable = true;
         autosuggestion.enable = true;
         syntaxHighlighting.enable = true;
+        enableCompletion = true;
         autocd = true;
         dotDir = ".config/zsh";
         shellAliases = {
