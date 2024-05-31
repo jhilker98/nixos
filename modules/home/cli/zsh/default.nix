@@ -14,6 +14,9 @@ in {
         syntaxHighlighting.enable = true;
         autocd = true;
         dotDir = ".config/zsh";
+        shellAliases = {
+          ref = "source ~/.config/zsh/.zshrc";
+        };
         initExtra = ''  
           export $(dbus-launch)
           eval $(${pkgs.thefuck}/bin/thefuck --alias)
