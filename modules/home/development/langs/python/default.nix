@@ -25,8 +25,8 @@ in {
       ];
       home = {
         sessionVariables = {
-          "VIRTUALENVWRAPPER_PYTHON" = "/home/jhilker/.nix-profile/bin/python3";
-          "PROJECT_HOME" = "${config.home.homeDirectory}/Devel/python";
+          "VIRTUALENVWRAPPER_PYTHON" = "${config.snowfallorg.user.home.directory}/.nix-profile/bin/python3";
+          "PROJECT_HOME" = "${config.snowfallorg.user.home.directory}/Devel/python";
         };
       };
       programs.zsh.initExtra = ''
