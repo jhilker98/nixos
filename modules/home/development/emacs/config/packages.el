@@ -27,6 +27,9 @@
 (package! org-recur)
 (package! org-trello)
 
+(package! om-dash
+:recipe (:host github :repo "gavv/om-dash"))
+
 (when (featurep! :lang org +roam2)
   (package! vulpea)
   (package! org-roam-ui))
