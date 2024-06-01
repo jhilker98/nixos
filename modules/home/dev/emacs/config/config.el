@@ -233,9 +233,6 @@
         (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
         (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src"))))
 
-;(use-package! ox-moderncv)
-;(use-package! ox-hugocv)
-
 (after! magit-delta
   (add-hook! 'magit-mode #'magit-delta-mode))
 

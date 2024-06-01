@@ -48,13 +48,9 @@
 
 (package! org-chef)
 
-;(when (featurep! :lang org +moderncv)
-;  (package! ox-moderncv
-;    :recipe (:host gitlab :repo "jhilker/org-cv")))
-;
-;(when (featurep! :lang org +hugo)
-;  (package! ox-hugocv
-;    :recipe (:host gitlab :repo "jhilker/org-cv")))
+(when (featurep! :lang org +moderncv)
+  (package! ox-moderncv
+    :recipe (:host gitlab :repo "jhilker98/org-cv")))
 
 (package! magit-delta)
 
