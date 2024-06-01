@@ -30,7 +30,6 @@
   hardware.cpu.intel.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-    system.stateVersion = "23.11";
     jhilker98 = {
       common.enable = true;
       desktop = {

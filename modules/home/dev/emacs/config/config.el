@@ -129,6 +129,8 @@
                      '((:name none
                         :habit t)))))))))
 
+
+
 (after! org-roam
   (cl-defmethod org-roam-node-namespace ((node org-roam-node))
     "Return the currently set namespace for the NODE."

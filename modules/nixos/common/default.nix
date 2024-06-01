@@ -8,6 +8,8 @@ in {
   options.jhilker98.common = { enable = mkEnableOption "Common"; };
 
   config = mkIf cfg.enable {
+
+    system.stateVersion = "23.11";
     nix = {
       package = pkgs.nixFlakes;
       settings = {

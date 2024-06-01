@@ -11,7 +11,7 @@ in {
 
   config = mkIf cfg.enable {
     home = {
-      stateVersion = "23.11";
+      stateVersion = "24.05";
       username = "jhilker";
       packages = with pkgs; [ nixfmt plantuml units snowfallorg.flake sops ];
       shellAliases = {
