@@ -1,9 +1,9 @@
 { config, lib, pkgs, inputs, ... }:
 with lib;
 with lib.jhilker98;
-let cfg = config.jhilker98.development.fzf;
+let cfg = config.jhilker98.dev.fzf;
 in {
-  options.jhilker98.development.fzf = { enable = mkEnableOption "FZF"; };
+  options.jhilker98.dev.fzf = { enable = mkEnableOption "FZF"; };
 
   config = mkIf cfg.enable {
     programs = {

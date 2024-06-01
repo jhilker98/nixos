@@ -7,23 +7,13 @@ let
 
   cfg = config.jhilker98.common;
 in {
-  options.jhilker98 = {
-    common = { enable = mkEnableOption "Common"; };
-    development = { enable = mkEnableOption "Development"; };
-  };
+  options.jhilker98 = { common = { enable = mkEnableOption "Common"; }; };
 
   config = mkIf cfg.enable {
     home = {
       stateVersion = "23.11";
       username = "jhilker";
-      packages = with pkgs; [
-        nixfmt
-        plantuml
-        units
-        snowfallorg.flake
-        sops
-        cheat
-      ];
+      packages = with pkgs; [ nixfmt plantuml units snowfallorg.flake sops ];
       shellAliases = {
         "ls" = "${pkgs.eza}/bin/eza -alh --group-directories-first";
         "cat" = "${pkgs.bat}/bin/bat -p";
@@ -31,7 +21,6 @@ in {
     };
     programs = {
       home-manager.enable = true;
-      direnv.enable = true;
       #zsh = {
       #  enable = true;
       #  autocd = true;
@@ -47,9 +36,7 @@ in {
     };
     xdg = {
       enable = true;
-      mime = {
-        enable = true;
-      };
+      mime = { enable = true; };
       userDirs = {
         enable = true;
         extraConfig = {
@@ -59,7 +46,7 @@ in {
     };
     jhilker98 = {
       starship.enable = true;
-      development = {
+      dev = {
         emacs.enable = true;
         fzf.enable = true;
       };
@@ -71,32 +58,5 @@ in {
       theme.enable = true;
     };
 
-     home.file."Documents/cheat/community".source = pkgs.fetchFromGitHub {
-      owner = "cheat";
-      repo = "cheatsheets";
-      rev = "36bdb99dcfadde210503d8c2dcf94b34ee950e1d";
-      sha256 = "0yzj15zkn7zfwspr07qfq9xqrkiakd1z2cgnb8r2nk2qz6ng9yq1";
-    };
-
-    xdg.configFile."cheat/conf.yml".source = (pkgs.formats.yaml {}).generate "conf.yml" {
-      cheatpaths = [
-        {
-          name = "community";
-          path = "${config.xdg.userDirs.documents}/cheat/community";
-          readonly = true;
-          tags = [
-            "community"
-          ];
-        }
-        {
-          name = "personal";
-          path = "${config.xdg.userDirs.documents}/cheat/personal";
-          readonly = true;
-          tags = [
-            "personal"
-          ];
-        }
-      ];
-    };
   };
 }

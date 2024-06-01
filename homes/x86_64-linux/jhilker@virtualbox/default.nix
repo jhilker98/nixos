@@ -7,7 +7,7 @@ with lib.jhilker98; {
     desktop = {
       qtile.enable = true;
     };
-    development = { emacs.enable = lib.mkDefault false; };
+    dev = { emacs.enable = lib.mkDefault false; };
     langs = {
       latex.enable = lib.mkDefault false;
       python.enable = lib.mkDefault false;

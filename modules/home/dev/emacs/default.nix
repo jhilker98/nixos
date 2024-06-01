@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 with lib;
 with lib.jhilker98;
-let cfg = config.jhilker98.development.emacs;
+let cfg = config.jhilker98.dev.emacs;
 in {
-  options.jhilker98.development.emacs = { enable = mkEnableOption "Emacs"; };
+  options.jhilker98.dev.emacs = { enable = mkEnableOption "Emacs"; };
   config = mkIf cfg.enable {
     programs.emacs = {
       enable = true;
@@ -16,7 +16,7 @@ in {
     };
     home = {
       sessionVariables."DOOMDIR" =
-        "$HOME/.dotfiles/modules/home/development/emacs/config";
+        "$HOME/.dotfiles/modules/home/dev/emacs/config";
       packages = with pkgs; [
         gcc
         binutils
