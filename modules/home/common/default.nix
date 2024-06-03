@@ -13,7 +13,7 @@ in {
     home = {
       stateVersion = "24.05";
       username = "jhilker";
-      packages = with pkgs; [ nixfmt plantuml units snowfallorg.flake sops ];
+      packages = with pkgs; [ nixfmt plantuml units snowfallorg.flake sops nixd ];
       shellAliases = {
         "ls" = "${pkgs.eza}/bin/eza -alh --group-directories-first";
         "cat" = "${pkgs.bat}/bin/bat -p";
