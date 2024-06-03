@@ -25,16 +25,11 @@ with lib.jhilker98; {
     theme.enable = true;
 
     git.enable = true;
-    apps = {
-      lazygit.enable = true;
-    };
+    apps = { lazygit.enable = true; };
   };
   home.packages = with pkgs; [
     qpdf
-    cheat
     zlib
-    act
-    tldr
     wakatime
     ttfautohint
     nodejs
@@ -58,7 +53,7 @@ with lib.jhilker98; {
     graphite-cli
     bitwarden-cli
   ];
-home.sessionVariables = {
-        "VIRTUALENVWRAPPER_PYTHON" = "/home/jhilker/.nix-profile/bin/python3";
-      };
+  home.sessionVariables = {
+    "VIRTUALENVWRAPPER_PYTHON" = "/home/jhilker/.nix-profile/bin/python3";
+  };
 }
