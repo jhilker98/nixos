@@ -431,6 +431,10 @@ I like to use org-mode to handle projects, tasks, and my calendar.
  :recipe (:host github :repo "gavv/om-dash"))
  #+end_src
 
+#+begin_src emacs-lisp
+(after! om-dash
+  (om-dash-mode))
+#+end_src
 
 ** Literate Programming
 One of the neatest things about org-mode is the ability to do "literate programming", where your documentation and your source code live in the same file. While I don't necessarily think it's the most useful application of programming, for something like a config file or teaching someone to code, it's a great idea. First off, I want to load particular languages into org-babel.

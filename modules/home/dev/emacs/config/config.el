@@ -129,6 +129,9 @@
                      '((:name none
                         :habit t)))))))))
 
+(after! om-dash
+  (om-dash-mode))
+
 
 
 (after! org-roam
