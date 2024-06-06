@@ -1,21 +1,21 @@
-(when (featurep! :ui hydra +childframe)
+(when (modulep! :ui hydra +childframe)
   (package! hydra-posframe
     :recipe (:host github :repo "Ladicle/hydra-posframe")))
 
-(when (featurep! :ui hydra +pretty)
+(when (modulep! :ui hydra +pretty)
   (package! pretty-hydra
     :recipe (:host github :repo "jerrypnz/major-mode-hydra.el" :files ("pretty-hydra.el"))))
 
-(when (featurep! :lang web +lipsum)
+(when (modulep! :lang web +lipsum)
   (package! lorem-ipsum))
 
 (package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
 
-(when (featurep! :ui hydra +childframe)
+(when (modulep! :ui hydra +childframe)
   (package! hydra-posframe
     :recipe (:host github :repo "Ladicle/hydra-posframe")))
 
-(when (featurep! :ui hydra +pretty)
+(when (modulep! :ui hydra +pretty)
   (package! pretty-hydra
     :recipe (:host github :repo "jerrypnz/major-mode-hydra.el" :files ("pretty-hydra.el"))))
 
@@ -28,9 +28,9 @@
 (package! org-trello)
 
 (package! om-dash
-:recipe (:host github :repo "gavv/om-dash"))
+  :recipe (:host github :repo "gavv/om-dash" :files ("om-dash.el")))
 
-(when (featurep! :lang org +roam2)
+(when (modulep! :lang org +roam2)
   (package! vulpea)
   (package! org-roam-ui))
 
@@ -48,7 +48,7 @@
 
 (package! org-chef)
 
-(when (featurep! :lang org +moderncv)
+(when (modulep! :lang org +moderncv)
   (package! ox-moderncv
     :recipe (:host gitlab :repo "jhilker98/org-cv")))
 
@@ -60,14 +60,14 @@
 
 (package! lorem-ipsum)
 
-(when (featurep! :emacs dired +casual)
+(when (modulep! :emacs dired +casual)
 
 (package! casual-dired
     :recipe (:host github :repo "kickingvegas/casual-dired")))
 
-(when (featurep! :tools biblio)
+(when (modulep! :tools biblio)
   (package! ebib))
 
-(when (featurep! :app rss)
+(when (modulep! :app rss)
   (package! elfeed-summary
     :recipe (:host github :repo "SqrtMinusOne/elfeed-summary")))

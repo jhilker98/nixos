@@ -7,7 +7,7 @@
 (setq user-full-name "Jacob Hilker"
       user-mail-address "jacob.hilker2@gmail.com")
 
-(when (featurep! emoji)
+(when (modulep! emoji)
 	(emojify-download-emoji))
 
 (when (and (eq system-type 'gnu/linux)
@@ -60,9 +60,13 @@
 (setq org-directory "~/Dropbox/org")
 
 (after! org
-  (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)" "CANC(c)"))
+  (setq org-todo-keywords '(
+                            (sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)" "CANC(c)")
+                            (sequence "OPEN(o)" "MERGED(m)" "CLOSED(C)"))
         org-todo-keyword-faces '(("TODO" . (:foreground "#fb4934" :underline t))
-                                 ("NEXT" . (:foreground "#fe8019")))
+                                 ("NEXT" . (:foreground "#fe8019"))
+                                 ("OPEN" . (:foreground "#fb4934" :underline t))
+                                 ("CANC" . (:foreground "#83a598" :strikethrough t)))
         org-agenda-files '("gtd/inbox.org" "gtd/orgzly.org" "gtd/todo.org" "gtd/gcal.org")
 
         org-agenda-start-day nil ;; today
@@ -129,8 +133,8 @@
                      '((:name none
                         :habit t)))))))))
 
-(after! om-dash
-  (om-dash-mode))
+(use-package! om-dash
+  :hook (org-mode-hook . (lambda () (setq om-dash-mode t))))
 
 
 

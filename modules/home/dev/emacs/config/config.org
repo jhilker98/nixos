@@ -205,11 +205,11 @@
 *** Hydra
 I like to use popup windows as much as I can, along with making my hydras prettier.
 #+begin_src emacs-lisp :tangle packages.el
-(when (featurep! :ui hydra +childframe)
+(when (modulep! :ui hydra +childframe)
   (package! hydra-posframe
     :recipe (:host github :repo "Ladicle/hydra-posframe")))
 
-(when (featurep! :ui hydra +pretty)
+(when (modulep! :ui hydra +pretty)
   (package! pretty-hydra
     :recipe (:host github :repo "jerrypnz/major-mode-hydra.el" :files ("pretty-hydra.el"))))
 #+end_src
@@ -221,7 +221,7 @@ I like to use popup windows as much as I can, along with making my hydras pretti
 
 ** Web Languages
 #+begin_src emacs-lisp :tangle packages.el
-(when (featurep! :lang web +lipsum)
+(when (modulep! :lang web +lipsum)
   (package! lorem-ipsum))
 
 (package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
@@ -238,7 +238,7 @@ I also want my tailwind server to work as an add-on.
 (setq user-full-name "Jacob Hilker"
       user-mail-address "jacob.hilker2@gmail.com")
 
-(when (featurep! emoji)
+(when (modulep! emoji)
 	(emojify-download-emoji))
 #+end_src
 
@@ -301,11 +301,11 @@ I use firefox as my browser, though I need to configure Emacs to use it.
 ** Hydra
 I like to use popup-windows as much as I can, along with making my hydras prettier.
 #+begin_src emacs-lisp :tangle packages.el
-(when (featurep! :ui hydra +childframe)
+(when (modulep! :ui hydra +childframe)
   (package! hydra-posframe
     :recipe (:host github :repo "Ladicle/hydra-posframe")))
 
-(when (featurep! :ui hydra +pretty)
+(when (modulep! :ui hydra +pretty)
   (package! pretty-hydra
     :recipe (:host github :repo "jerrypnz/major-mode-hydra.el" :files ("pretty-hydra.el"))))
 #+end_src
@@ -322,15 +322,20 @@ I like to use popup-windows as much as I can, along with making my hydras pretti
 (setq org-directory "~/Dropbox/org")
 
 (after! org
-  (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)" "CANC(c)"))
+  (setq org-todo-keywords '(
+                            (sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)" "CANC(c)")
+                            (sequence "OPEN(o)" "MERGED(m)" "CLOSED(C)"))
         org-todo-keyword-faces '(("TODO" . (:foreground "#fb4934" :underline t))
-                                 ("NEXT" . (:foreground "#fe8019")))
+                                 ("NEXT" . (:foreground "#fe8019"))
+                                 ("OPEN" . (:foreground "#fb4934" :underline t))
+                                 ("CANC" . (:foreground "#83a598" :strikethrough t)))
         org-agenda-files '("gtd/inbox.org" "gtd/orgzly.org" "gtd/todo.org" "gtd/gcal.org")
 
         org-agenda-start-day nil ;; today
         org-ellipsis "▾"))
 
 #+end_src
+
 
 
 ** UI Changes
@@ -426,14 +431,14 @@ I like to use org-mode to handle projects, tasks, and my calendar.
 #+end_src
 
 *** Project Planning
-#+begin_src emacs-lisp :tangle packages.el
- (package! om-dash
- :recipe (:host github :repo "gavv/om-dash"))
- #+end_src
+#+begin_src emacs-lisp :tangle "packages.el"
+(package! om-dash
+  :recipe (:host github :repo "gavv/om-dash" :files ("om-dash.el")))
+#+end_src
 
 #+begin_src emacs-lisp
-(after! om-dash
-  (om-dash-mode))
+(use-package! om-dash
+  :hook (org-mode-hook . (lambda () (setq om-dash-mode t))))
 #+end_src
 
 ** Literate Programming
@@ -445,7 +450,7 @@ One of the neatest things about org-mode is the ability to do "literate programm
 ** Note-taking with Org Roam & Denote
 I love using org-roam for maintaining notes and notebooks. However, I also like being able to visualize how my notes interact, and being able to quickly create particular templates.
 #+begin_src emacs-lisp :tangle packages.el
-(when (featurep! :lang org +roam2)
+(when (modulep! :lang org +roam2)
   (package! vulpea)
   (package! org-roam-ui))
 
@@ -615,7 +620,7 @@ Since I no longer use Hugo, I want to use pandoc to build my blog posts.
 
 ** Maintaining a CV
 #+begin_src emacs-lisp :tangle packages.el
-(when (featurep! :lang org +moderncv)
+(when (modulep! :lang org +moderncv)
   (package! ox-moderncv
     :recipe (:host gitlab :repo "jhilker98/org-cv")))
 
@@ -655,7 +660,7 @@ I also use [[https://wakatime.com][Wakatime]] to manage my time spent in develop
 ** Dired
 I like to have a quick menu for accessing commmands in dired.
 #+begin_src emacs-lisp :tangle packages.el
-(when (featurep! :emacs dired +casual)
+(when (modulep! :emacs dired +casual)
 
 (package! casual-dired
     :recipe (:host github :repo "kickingvegas/casual-dired")))
@@ -665,7 +670,7 @@ I like to have a quick menu for accessing commmands in dired.
 ** Ebib
 I like using ebib as a bibliography manager.
 #+begin_src emacs-lisp :tangle packages.el
-(when (featurep! :tools biblio)
+(when (modulep! :tools biblio)
   (package! ebib))
 #+end_src
 
@@ -692,7 +697,7 @@ I like using ebib as a bibliography manager.
 ** Elfeed
 Elfeed has quickly become my favorite RSS reader.
 #+begin_src emacs-lisp :tangle packages.el
-(when (featurep! :app rss)
+(when (modulep! :app rss)
   (package! elfeed-summary
     :recipe (:host github :repo "SqrtMinusOne/elfeed-summary")))
 #+end_src
