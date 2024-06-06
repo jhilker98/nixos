@@ -72,7 +72,8 @@
         org-agenda-files '("gtd/inbox.org" "gtd/orgzly.org" "gtd/todo.org" "gtd/gcal.org" "gtd/projects.org")
 
         org-agenda-start-day nil ;; today
-        org-ellipsis "▾"))
+        org-ellipsis "▾")
+  (add-to-list 'org-modules 'org-habit t))
 
 (defun jh/org-ui-hook ()
   (variable-pitch-mode 1)
@@ -135,8 +136,8 @@
                      '((:name none
                         :habit t)))))))))
 
-(use-package! om-dash
-  :hook (org-mode-hook . om-dash-mode ))
+(use-package! om-dash)
+(add-hook! 'org-mode-hook #'om-dash-mode)
 
 
 

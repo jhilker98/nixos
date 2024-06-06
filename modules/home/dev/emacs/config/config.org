@@ -334,7 +334,8 @@ I like to use popup-windows as much as I can, along with making my hydras pretti
         org-agenda-files '("gtd/inbox.org" "gtd/orgzly.org" "gtd/todo.org" "gtd/gcal.org" "gtd/projects.org")
 
         org-agenda-start-day nil ;; today
-        org-ellipsis "▾"))
+        org-ellipsis "▾")
+  (add-to-list 'org-modules 'org-habit t))
 
 #+end_src
 
@@ -439,8 +440,8 @@ I like to use org-mode to handle projects, tasks, and my calendar.
 #+end_src
 
 #+begin_src emacs-lisp
-(use-package! om-dash
-  :hook (org-mode-hook . om-dash-mode ))
+(use-package! om-dash)
+(add-hook! 'org-mode-hook #'om-dash-mode)
 #+end_src
 
 ** Literate Programming
