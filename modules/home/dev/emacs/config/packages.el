@@ -26,6 +26,8 @@
 (package! org-ql)
 (package! org-recur)
 (package! org-trello)
+(package! org-sidebar
+  :recipe (:host github :repo "alphapapa/org-sidebar"))
 
 (package! om-dash
   :recipe (:host github :repo "gavv/om-dash" :files ("om-dash.el")))
