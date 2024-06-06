@@ -62,13 +62,13 @@
 (after! org
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)" "CANC(c)")
                             (sequence "OPEN(o)" "MERGED(m)" "CLOSED(C)")
-                            (type "PROJ(P)" "HOME(H)" "JOB(J)"))
+                            (type "PROJECT(p)" "HOME(H)" "JOB(J)"))
         org-todo-keyword-faces '(("TODO" . (:foreground "#fb4934" :underline t))
                                  ("NEXT" . (:foreground "#fe8019"))
                                  ("OPEN" . (:foreground "#fb4934" :underline t))
-                                 ("DONE" . (:foreground "#83a598" :strikethrough t))
-                                 ("CANC" . (:foreground "#83a598" :strikethrough t))
-                                 ("PROJ" . (:foreground "#d3869b")))
+                                 ("DONE" . (:foreground "#83a598" :strike-through t))
+                                 ("CANC" . (:foreground "#83a598" :strike-through t))
+                                 ("PROJECT" . (:foreground "#d3869b" :weight bold :slant italic)))
         org-agenda-files '("gtd/inbox.org" "gtd/orgzly.org" "gtd/todo.org" "gtd/gcal.org" "gtd/projects.org")
 
         org-agenda-start-day nil ;; today
