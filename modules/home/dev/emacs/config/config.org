@@ -322,14 +322,16 @@ I like to use popup-windows as much as I can, along with making my hydras pretti
 (setq org-directory "~/Dropbox/org")
 
 (after! org
-  (setq org-todo-keywords '(
-                            (sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)" "CANC(c)")
-                            (sequence "OPEN(o)" "MERGED(m)" "CLOSED(C)"))
+  (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)" "CANC(c)")
+                            (sequence "OPEN(o)" "MERGED(m)" "CLOSED(C)")
+                            (type "PROJ(P)" "HOME(H)" "JOB(J)"))
         org-todo-keyword-faces '(("TODO" . (:foreground "#fb4934" :underline t))
                                  ("NEXT" . (:foreground "#fe8019"))
                                  ("OPEN" . (:foreground "#fb4934" :underline t))
-                                 ("CANC" . (:foreground "#83a598" :strikethrough t)))
-        org-agenda-files '("gtd/inbox.org" "gtd/orgzly.org" "gtd/todo.org" "gtd/gcal.org")
+                                 ("DONE" . (:foreground "#83a598" :strikethrough t))
+                                 ("CANC" . (:foreground "#83a598" :strikethrough t))
+                                 ("PROJ" . (:foreground "#d3869b")))
+        org-agenda-files '("gtd/inbox.org" "gtd/orgzly.org" "gtd/todo.org" "gtd/gcal.org" "gtd/projects.org")
 
         org-agenda-start-day nil ;; today
         org-ellipsis "▾"))
@@ -438,7 +440,7 @@ I like to use org-mode to handle projects, tasks, and my calendar.
 
 #+begin_src emacs-lisp
 (use-package! om-dash
-  :hook (org-mode-hook . (lambda () (setq om-dash-mode t))))
+  :hook (org-mode-hook . om-dash-mode ))
 #+end_src
 
 ** Literate Programming
