@@ -124,17 +124,21 @@
                                     "** Directions"))))))))
 
 (setq org-agenda-custom-commands
-      '(("p" "Projects"
-         ((todo "" ((org-agenda-overriding-header "Projects")
-                    (org-super-agenda-groups
-                     '((:name none ;; disable super group headers
-                        :auto-property "ProjectId")
-                       (:discard (:anything t))))))))
-        ("h" "Habits"
-         ((agenda "" ((org-agenda-overriding-header "Habits")
-                    (org-super-agenda-groups
-                     '((:name none
-                        :habit t)))))))))
+  '(
+    ("d" "Dashboard"
+         ((agenda "" ((org-agenda-span 'day)
+                      (org-agenda-overriding-header "Today")
+                      (org-agenda-show-inherited-tags nil)
+                      (org-agenda-format-date "%a, %d %b")
+                      (org-agenda-current-time-string "ᐊ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ Now")
+                      (org-agenda-time-grid '((today require-timed remove-match)()() "" "┈┈┈┈┈┈┈┈┈┈┈┈┈┈"))
+                      (org-agenda-use-time-grid t)
+                      (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                      (org-deadline-warning-days 14)))
+    
+          ))
+    
+        ))
 
 
 
