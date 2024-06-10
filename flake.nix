@@ -34,9 +34,8 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-wallpaper = {
-      url = "github:lunik1/nix-wallpaper";
-    };
+    nix-wallpaper = { url = "github:lunik1/nix-wallpaper"; };
+    ags.url = "github:Aylur/ags";
   };
   outputs = inputs:
     inputs.snowfall-lib.mkFlake {
@@ -70,24 +69,23 @@
           snowfall-flake.overlays.default
         ];
       systems = {
-        modules.nixos = with inputs;
-          [
-            sops-nix.nixosModules.sops
-            disko.nixosModules.disko
-            stylix.nixosModules.stylix
-            home-manager.nixosModules.home-manager
-          ];
-        hosts = {
-        };
+        modules.nixos = with inputs; [
+          sops-nix.nixosModules.sops
+          disko.nixosModules.disko
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+        ];
+        hosts = { };
       };
       homes = {
         modules = with inputs; [
           nixvim.homeManagerModules.nixvim
           sops-nix.homeManagerModules.sops
         ];
-        users = { "jhilker@wsl".modules = with inputs; [ 
-            stylix.homeManagerModules.stylix
-        ]; };
+        users = {
+          "jhilker@wsl".modules = with inputs;
+            [ stylix.homeManagerModules.stylix ];
+        };
       };
       outputs-builder = channels: {
         # Outputs in the outputs builder are transformed to support each system. This
