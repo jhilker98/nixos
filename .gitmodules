@@ -1,9 +1,0 @@
-[submodule "wiki/github"]
-	path = wiki/github
-	url = git@github.com:jhilker98/dotfiles.wiki.git
-[submodule "wiki/gitlab"]
-	path = wiki/gitlab
-	url = git@gitlab.com:jhilker98/dotfiles.wiki.git
-[submodule "wiki/codeberg"]
-	path = wiki/codeberg
-	url = git@codeberg.org:jhilker98/dotfiles.wiki.git
