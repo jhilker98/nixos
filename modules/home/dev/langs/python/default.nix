@@ -21,7 +21,7 @@ in {
             pygobject3
           ]))
 
-        nodePackages.pyright
+        pyright
       ];
       home = {
         sessionVariables = {
