@@ -31,6 +31,7 @@ in {
 
   config = mkIf cfg.enable {
     stylix = {
+      enable = true;
       image = pkgs.fetchurl {
         url =
           "https://gruvbox-wallpapers.pages.dev/wallpapers/irl/YRAJQAT4Dg-avesta-rezaeizadeh-unsplash.jpg";
