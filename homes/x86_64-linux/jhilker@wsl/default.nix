@@ -52,6 +52,10 @@ with lib.jhilker98; {
     nodePackages.pnpm
     graphite-cli
     bitwarden-cli
+    iamb
+    jq
+    ledger
+
   ];
   home.sessionVariables = {
     "VIRTUALENVWRAPPER_PYTHON" = "/home/jhilker/.nix-profile/bin/python3";
