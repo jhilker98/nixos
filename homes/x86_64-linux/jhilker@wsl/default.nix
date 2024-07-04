@@ -54,8 +54,9 @@ with lib.jhilker98; {
     bitwarden-cli
     iamb
     jq
-    ledger
-
+    #ledger
+    beancount
+    fava
   ];
   home.sessionVariables = {
     "VIRTUALENVWRAPPER_PYTHON" = "/home/jhilker/.nix-profile/bin/python3";
