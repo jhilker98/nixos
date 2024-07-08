@@ -56,7 +56,6 @@ with lib.jhilker98; {
     #ledger
     beancount
   ];
-  nix.package = pkgs.nixVersions.nix_2_21;
   home.sessionVariables = {
     "VIRTUALENVWRAPPER_PYTHON" = "/home/jhilker/.nix-profile/bin/python3";
   };
