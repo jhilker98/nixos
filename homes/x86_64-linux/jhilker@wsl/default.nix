@@ -42,7 +42,6 @@ with lib.jhilker98; {
     rustc
     cargo
     go
-    thefuck
     jq
     pup
     #libby
@@ -56,8 +55,8 @@ with lib.jhilker98; {
     jq
     #ledger
     beancount
-    fava
   ];
+  nix.package = pkgs.nixVersions.nix_2_21;
   home.sessionVariables = {
     "VIRTUALENVWRAPPER_PYTHON" = "/home/jhilker/.nix-profile/bin/python3";
   };

@@ -18,9 +18,8 @@ in {
         shellAliases = {
           ref = "source ~/.config/zsh/.zshrc";
         };
-        initExtra = ''  
+        initExtra = ''
           export $(dbus-launch)
-          eval $(${pkgs.thefuck}/bin/thefuck --alias)
           '';
       };
     };
