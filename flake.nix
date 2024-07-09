@@ -36,6 +36,7 @@
     };
     nix-wallpaper = { url = "github:lunik1/nix-wallpaper"; };
     ags.url = "github:Aylur/ags";
+    paisa.url = "github:ananthakumaran/paisa";
   };
   outputs = inputs:
     inputs.snowfall-lib.mkFlake {

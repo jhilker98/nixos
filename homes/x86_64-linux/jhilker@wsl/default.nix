@@ -25,7 +25,10 @@ with lib.jhilker98; {
     theme.enable = true;
 
     git.enable = true;
-    apps = { lazygit.enable = true; };
+    apps = {
+      lazygit.enable = true;
+      ledger.enable = true;
+    };
   };
   home.packages = with pkgs; [
     qpdf
@@ -53,8 +56,6 @@ with lib.jhilker98; {
     bitwarden-cli
     iamb
     jq
-    #ledger
-    beancount
   ];
   home.sessionVariables = {
     "VIRTUALENVWRAPPER_PYTHON" = "/home/jhilker/.nix-profile/bin/python3";
