@@ -8,7 +8,7 @@ in {
   };
   config = mkIf cfg.enable {
     programs = { direnv = { enable = true; }; };
-    home.packages = with pkgs; [ cheat act tldr python3Packages.thefuck ];
+    home.packages = with pkgs; [ cheat act tldr thefuck ];
     home.file."Documents/cheat/community".source = pkgs.fetchFromGitHub {
       owner = "cheat";
       repo = "cheatsheets";
@@ -33,5 +33,8 @@ in {
           }
         ];
       };
+      programs.zsh.initExtra = ''
+        eval "${pkgs.thefuck}/bin/thefuck --alias"
+      '';
   };
 }
