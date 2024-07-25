@@ -6,7 +6,8 @@
   };
   programs.zsh.initExtra = ''
   . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-  sudo /etc/init.d/dbus start &> /dev/null
+    sudo /etc/init.d/dbus start &> /dev/null
+    export $(dbus-launch)
   '';
   programs.zsh.sessionVariables = {
     "DISPLAY" = "$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0";
