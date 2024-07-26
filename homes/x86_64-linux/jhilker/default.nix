@@ -14,6 +14,9 @@ with lib.jhilker98; {
 
   jhilker98 = {
     common.enable = true;
+    desktop = {
+      qtile.enable = true;
+    };
     starship.enable = true;
     dev = {
       emacs.enable = true;

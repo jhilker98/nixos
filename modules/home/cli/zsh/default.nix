@@ -24,6 +24,7 @@ in {
           ref = "source ~/.config/zsh/.zshrc";
         };
         initExtra = ''
+          sudo /etc/init.d/dbus start &> /dev/null
           export $(dbus-launch)
           '';
       };
