@@ -12,7 +12,7 @@ in {
       zsh.initExtra = ''
       eval $(thefuck --alias --enable-experimental-instant-mode)
   '';
-      bash.initExtra = ''
+      bash.bashrcExtra = ''
       eval $(thefuck --alias --enable-experimental-instant-mode)
       '';
 };
