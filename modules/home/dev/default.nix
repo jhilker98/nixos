@@ -9,12 +9,6 @@ in {
   config = mkIf cfg.enable {
     programs = { 
       direnv = { enable = true; }; 
-      zsh.initExtra = ''
-      eval $(thefuck --alias --enable-experimental-instant-mode)
-  '';
-      bash.bashrcExtra = ''
-      eval $(thefuck --alias --enable-experimental-instant-mode)
-      '';
 };
     home.packages = with pkgs; [ cheat act tldr thefuck ];
     home.file."Documents/cheat/community".source = pkgs.fetchFromGitHub {
