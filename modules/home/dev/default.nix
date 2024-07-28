@@ -10,8 +10,11 @@ in {
     programs = { 
       direnv = { enable = true; }; 
       zsh.initExtra = ''
-       eval $(${pkgs.thefuck}/bin/thefuck --alias) 
+      eval $(thefuck --alias --enable-experimental-instant-mode)
   '';
+      bash.initExtra = ''
+      eval $(thefuck --alias --enable-experimental-instant-mode)
+      '';
 };
     home.packages = with pkgs; [ cheat act tldr thefuck ];
     home.file."Documents/cheat/community".source = pkgs.fetchFromGitHub {
