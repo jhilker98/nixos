@@ -15,7 +15,7 @@ in {
     programs = {
       zsh = {
         enable = true;
-        autosuggestion.enable = true;
+        #autosuggestion.enable = true;
         syntaxHighlighting.enable = true;
         enableCompletion = true;
         autocd = true;

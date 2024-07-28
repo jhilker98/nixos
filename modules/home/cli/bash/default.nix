@@ -13,7 +13,6 @@ in {
       bash = {
         enable = true;
         shellAliases = {
-          ref = "source ~/.bashrc";
           ls = "${pkgs.eza}/bin/eza -alh --group-directories-first";
           cat = "${pkgs.bat}/bin/bat -p";
         };
