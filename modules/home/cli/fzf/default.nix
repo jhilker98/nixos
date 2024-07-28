@@ -14,7 +14,7 @@ in {
         enableFishIntegration = config.jhilker98.fish.enable;
       };
       bash.initExtra = ''
-        source ${inputs.fzf-marks}/fzf-marks.plugin.zsh
+        source ${inputs.fzf-marks}/fzf-marks.plugin.bash
       '';
       zsh.initExtra = ''
         source ${inputs.fzf-marks}/fzf-marks.plugin.zsh
