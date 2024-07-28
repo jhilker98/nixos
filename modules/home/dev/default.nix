@@ -33,8 +33,5 @@ in {
           }
         ];
       };
-      programs.zsh.initExtra = ''
-        eval "${pkgs.thefuck}/bin/thefuck --alias"
-      '';
   };
 }
