@@ -8,6 +8,15 @@ in {
     enable = mkEnableOption "Enable email on my system.";
   };
   config = mkIf cfg.enable {
-
+    programs = {
+      neomutt = {
+        enable = true;
+      };
+    };
+    services = {
+      mbsync = {
+        enable = true;
+      };
+    };
   };
 } 
