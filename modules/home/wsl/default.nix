@@ -3,8 +3,8 @@
   home.sessionVariables = {
     "WSLHOME" = "/mnt/c/Users/camoh/";
     "PATH" = "$PATH:$WSLHOME/.local/bin";
-
     "DISPLAY" = "$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0";
+    "GPG_TTY" = "$(tty)";
   };
   programs.zsh.shellAliases = {
     "spicetify" = "spicetify.exe";
