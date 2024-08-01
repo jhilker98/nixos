@@ -98,4 +98,6 @@ for num in range(number):
   home.sessionVariables = {
     "VIRTUALENVWRAPPER_PYTHON" = "/home/jhilker/.nix-profile/bin/python3";
   };
+  programs.git.signing.gpgPath = "/mnt/c/Program Files (x86)/GnuPG/bin/gpg.exe";
+
 }
