@@ -59,7 +59,7 @@ with lib.jhilker98; {
     bitwarden-cli
     iamb
     jq
-    (pkgs.writers.writePython3Bin "rdate" { libraries = [ pkgs.python3Packages.argparse ]; } ''
+    (pkgs.writers.writePython3Bin "rdate" { libraries = [ ]; } ''
       import random as r
 from pprint import pprint
 import argparse
