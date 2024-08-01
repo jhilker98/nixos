@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "jnoortheen.nix-ide"
+        "jnoortheen.nix-ide",
+        "signageos.signageos-vscode-sops"
     ]
 }
