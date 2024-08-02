@@ -48,7 +48,6 @@ in {
           };
           which-key = {
             enable = true;
-            registrations = { "<leader>g" = "Git"; };
           };
           nvim-autopairs.enable = true;
           nix.enable = true;
