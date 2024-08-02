@@ -52,6 +52,9 @@ in {
           nvim-autopairs.enable = true;
           nix.enable = true;
         };
+        extraPlugins = with pkgs.vimPlugins; [
+          nvim-web-devicons
+        ];
         globals.mapleader = " ";
         keymaps = [
           {
