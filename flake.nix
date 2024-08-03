@@ -80,7 +80,11 @@
           stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
         ];
-        hosts = { };
+        hosts = {
+          wsl.modules = with inputs; [
+            nixos-wsl.nixosModules.wsl
+          ];
+        };
       };
       homes = {
         modules = with inputs; [
