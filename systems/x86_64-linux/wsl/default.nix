@@ -23,7 +23,9 @@
 }:
 {
     # Your configuration.
+    wsl.defaultUser = "jhilker";
     jhilker98 = {
-
+      common.enable = true;
+      desktop.enable = true;
     };
 }
