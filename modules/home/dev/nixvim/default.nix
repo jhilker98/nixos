@@ -48,6 +48,12 @@ in {
           };
           which-key = {
             enable = true;
+            settings.spec = [
+              {
+                __unkeyed-1 = "<leader>g";
+                desc = "Git actions";
+              }
+            ];
           };
           nvim-autopairs.enable = true;
           nix.enable = true;
