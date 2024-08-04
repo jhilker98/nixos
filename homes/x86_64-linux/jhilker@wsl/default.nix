@@ -25,7 +25,6 @@ with lib.jhilker98; {
 
     zsh.enable = true;
     bash.enable = true;
-    theme.enable = true;
 
     git.enable = true;
     apps = {

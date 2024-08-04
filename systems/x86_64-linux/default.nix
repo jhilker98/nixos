@@ -23,6 +23,5 @@ with lib.jhilker98; {
   jhilker98.nixos = {
     common.enable = true;
     desktop.enable = true;
-    theme.enable = true;
   };
 }
