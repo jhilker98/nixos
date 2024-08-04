@@ -59,7 +59,9 @@ in {
       dconf.enable = true;
     };
     security = {
-      sudo.enable = true;
+      sudo = {
+        enable = true;
+      };
       #doas = {
       #  enable = true;
       #  extraRules = [{
