@@ -14,10 +14,14 @@ post_package_bump_hooks = []
 [git_hooks]
 
 [commit_types]
+mod = { changelog_title = "Module Updates" }
+
 
 [changelog]
 path = "CHANGELOG.md"
-authors = []
+authors = [
+  {username = "jhilker98", signature = "Jacob Hilker"}
+]
 
 [bump_profiles]
 
