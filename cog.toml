@@ -12,6 +12,14 @@ pre_package_bump_hooks = []
 post_package_bump_hooks = []
 
 [git_hooks]
+[git_hooks.commit-msg]
+script = """#!/bin/sh
+set -e
+cog verify --file $1
+cog check
+"""
+
+
 
 [commit_types]
 mod = { changelog_title = "Module Updates" }
