@@ -39,7 +39,7 @@
 		"body": [
 			"{config, lib, inputs, pkgs, stdenv, ...}:",
 			"\n",
-			"stdenv.mkDerivation ${1:recursive|rec,|}{",
+			"stdenv.mkDerivation ${1|rec," "|}{",
 			"pname = ${2:package name};",
 			"installPhase = ''",
 			"  ${0:install package}",
