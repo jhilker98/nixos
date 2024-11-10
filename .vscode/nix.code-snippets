@@ -32,5 +32,22 @@
 			"}"
 		],
 		"description": "Log output to console"
+	},
+	"Snowfall package": {
+		"scope": "nix",
+		"prefix": "nixPkg",
+		"body": [
+			"{config, lib, inputs, pkgs, stdenv, ...}:",
+			"\n",
+			"stdenv.mkDerivation ${1:recursive|rec,|}{",
+			"pname = ${2:package name};",
+			"installPhase = ''",
+			"  ${0:install package}",
+			"''",
+			"src = {",
+			"\n",
+			"};",
+			"}"
+		],
 	}
 }
