@@ -26,7 +26,6 @@
 			"cfg = config.${1:namespace}.${2:module name};",
 			"in {",
 			"options.${1:namespace}.${2:module name} = { enable = mkEnableOption \"${3:module name}\"; };",
-			"\n",
 			"config = mkIf cfg.enable {",
 			"$0",
 			"};",
