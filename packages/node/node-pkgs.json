@@ -1,4 +1,4 @@
 [
-  "tailwindcss-document-cli",
-  "@astrojs/language-server"
+    "tailwindcss-document-cli",
+    "@astrojs/language-server"
 ]
