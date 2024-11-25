@@ -23,6 +23,8 @@ cog check
 
 [commit_types]
 mod = { changelog_title = "Module Updates" }
+sys = { changelog_title = "System Updates" }
+home = { changelog_title = "Home Changes" } 
 
 
 [changelog]
