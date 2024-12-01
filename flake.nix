@@ -90,11 +90,8 @@
         modules = with inputs; [
           nixvim.homeManagerModules.nixvim
           sops-nix.homeManagerModules.sops
+          stylix.homeManagerModules.stylix
         ];
-        users = {
-          "jhilker@wsl".modules = with inputs;
-            [ stylix.homeManagerModules.stylix ];
-        };
       };
       outputs-builder = channels: {
         # Outputs in the outputs builder are transformed to support each system. This
