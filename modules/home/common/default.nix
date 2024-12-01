@@ -17,6 +17,9 @@ in {
         snowfallorg.flake
         sops
         nixd
+        sops
+        age
+        git-crypt
       ];
       shellAliases = {
         "ls" = "${pkgs.eza}/bin/eza -alh --group-directories-first";
