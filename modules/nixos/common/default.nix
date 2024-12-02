@@ -9,7 +9,17 @@ in {
 
   config = mkIf cfg.enable {
 
-    system.stateVersion = "23.11";
+    system = {
+      stateVersion = "24.11";
+      activationScripts = {
+        base-dirs = {
+          text = ''
+            mkdir -p /nix/var/nix/profiles/per-user/jhilker
+          '';
+          deps = [ ];
+        };
+      };
+    };
     nix = {
       package = pkgs.nixFlakes;
       settings = {
@@ -72,14 +82,7 @@ in {
       pam.services = { sddm.enableKwallet = true; };
       polkit.enable = true;
     };
-    system.activationScripts = {
-        base-dirs = {
-          text = ''
-            mkdir -p /nix/var/nix/profiles/per-user/jhilker
-          '';
-          deps = [ ];
-        };
-      };
+    
   };
 
 }

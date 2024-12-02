@@ -8,7 +8,7 @@ in {
   options.jhilker98.common = { enable = mkEnableOption "Common"; };
   config = mkIf cfg.enable {
     home = {
-      stateVersion = "24.05";
+      stateVersion = "24.11"; # do not update
       username = "jhilker";
       packages = with pkgs; [
         nixfmt
