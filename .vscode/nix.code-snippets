@@ -49,5 +49,28 @@
 			"};",
 			"}"
 		],
+	},
+	"Snowfall Home": {
+		"scope": "nix",
+		"prefix": "nixHome",
+		"body": [
+			"{lib, config, pkgs, inputs, ...}:",
+			"with lib.${1:namespace}; {",
+			"$0",
+			"\n",
+			"}"
+		]
+	},
+	"Snowfall system": {
+		"scope": "nix",
+		"prefix": "nixSys",
+		"body": [
+			"{lib, pkgs, inputs, system, target, format, virtual, systems, config, ...}:",
+			"with lib;",
+			"with lib.${1:namespace}; {",
+			"$0",
+			"\n",
+			"}"
+		]
 	}
 }
