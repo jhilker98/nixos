@@ -61,7 +61,6 @@ in {
       gnupg.agent = {
         enable = true;
         enableSSHSupport = true;
-        # pinentryFlavor = "gtk2";
         pinentryPackage = pkgs.pinentry-gtk2;
       };
       zsh.enable = true;
