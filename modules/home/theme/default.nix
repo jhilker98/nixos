@@ -31,6 +31,7 @@ options.jhilker98.theme = {
 config = mkIf cfg.enable {
   stylix = {
     enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/base16/gruvbox-dark-hard.yaml";
   };
 };
 }
