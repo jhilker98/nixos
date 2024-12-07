@@ -7,3 +7,4 @@ docs/content/*
 docs/public
 /.emacs/
 docs/.hugo_build.lock
+secrets/.decrypted~secrets.yaml
