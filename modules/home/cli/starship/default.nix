@@ -8,6 +8,9 @@ options.jhilker98.cli.starship = { enable = mkEnableOption "Starship"; };
 config = mkIf cfg.enable {
   programs.starship = {
     enable = true;
+    settings = {
+      line_break.disabled = true;
+    };
   };
 };
 }
