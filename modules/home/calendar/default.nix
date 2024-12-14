@@ -2,9 +2,9 @@
 with lib;
 with lib.jhilker98;
 let
-cfg = config.jhilker98.calenar;
+cfg = config.jhilker98.calendar;
 in {
-options.jhilker98.calenar = { enable = mkEnableOption "calendar"; };
+options.jhilker98.calendar = { enable = mkEnableOption "calendar"; };
 config = mkIf cfg.enable {
 home.packages = with pkgs; [ gcalcli ];
 };
