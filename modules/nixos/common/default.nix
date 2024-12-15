@@ -22,6 +22,7 @@ in {
     };
     nix = {
       package = pkgs.nixFlakes;
+      nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
       settings = {
         #extraExperimentalFeaatures = ["nix-command" "flakes"];
         auto-optimise-store = true;
@@ -47,7 +48,7 @@ in {
         };
       };
     };
-    environment.systemPackages = with pkgs; [ sops mkpasswd whois age];
+    environment.systemPackages = with pkgs; [ sops mkpasswd whois age ];
     programs = {
       git = {
         enable = true;
@@ -68,9 +69,7 @@ in {
       dconf.enable = true;
     };
     security = {
-      sudo = {
-        enable = true;
-      };
+      sudo = { enable = true; };
       #doas = {
       #  enable = true;
       #  extraRules = [{
@@ -81,7 +80,7 @@ in {
       pam.services = { sddm.enableKwallet = true; };
       polkit.enable = true;
     };
-    
+
   };
 
 }
