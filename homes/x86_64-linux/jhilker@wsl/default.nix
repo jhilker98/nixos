@@ -8,6 +8,9 @@ with lib.jhilker98; {
       starship.enable = true;
       zsh.enable = true;
     };
+    dev = {
+      nixvim.enable = true;
+    };
   };
 
 
