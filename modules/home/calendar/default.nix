@@ -8,7 +8,8 @@ options.jhilker98.calendar = { enable = mkEnableOption "calendar"; };
 config = mkIf cfg.enable {
   home.packages = with pkgs; [ gcalcli ];
   home.file.".gcalclirc".text = ''
-    --client-id=${config.sops.secrets."gcalcli/client_id"}
+    --client-id=${config.sops.secrets."gcal/client_id"}
+    --client-secret=${config.sops.secrets."gcal/client_secret"}
   '';
 };
 }
