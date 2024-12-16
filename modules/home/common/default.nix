@@ -30,7 +30,7 @@ in {
     sops = {
       defaultSopsFile = ../../../secrets/secrets.yaml;
       defaultSopsFormat = "yaml";
-      age.keyFile = "/home/jhilker/.config/sops/age/keys.txt";
+      age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
     };
     xdg = {
       enable = true;
