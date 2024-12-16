@@ -6,6 +6,9 @@ cfg = config.jhilker98.calendar;
 in {
 options.jhilker98.calendar = { enable = mkEnableOption "calendar"; };
 config = mkIf cfg.enable {
-home.packages = with pkgs; [ gcalcli ];
+  home.packages = with pkgs; [ gcalcli ];
+  home.file.".gcalclirc".text = ''
+    --client-id=${config.sops.secrets."gcalcli/client_id"}
+  '';
 };
 }
