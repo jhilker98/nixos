@@ -33,6 +33,7 @@ in {
       age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
       defaultSymlinkPath = "/run/user/1000/secrets";
       defaultSecretsMountPoint = "/run/user/1000/secrets.d";
+      secrets.hello = { };
     };
     xdg = {
       enable = true;
@@ -44,6 +45,9 @@ in {
         };
       };
     };
+    home.file."test.txt".text = ''
+      hello ${config.sops.secrets.hello.path}
+    '';
     nix.settings.extra-experimental-features = [ "nix-command" "flakes" ];
   };
 }
