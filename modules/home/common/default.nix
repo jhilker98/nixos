@@ -25,15 +25,17 @@ in {
         "ls" = "${pkgs.eza}/bin/eza -alh --group-directories-first";
         "cat" = "${pkgs.bat}/bin/bat -p";
       };
+  activation.setupEtc = config.lib.dag.entryAfter [ "writeBoundary" ] ''
+    run /run/current-system/sw/bin/systemctl --user restart sops-nix.service
+  '';
     };
     programs = { home-manager.enable = true; };
     sops = {
       defaultSopsFile = ../../../secrets/secrets.yaml;
       defaultSopsFormat = "yaml";
       age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
-      defaultSymlinkPath = "/run/user/1000/secrets";
-      defaultSecretsMountPoint = "/run/user/1000/secrets.d";
-      secrets.hello = { };
+      #defaultSymlinkPath = "/run/user/1000/secrets";
+      #defaultSecretsMountPoint = "/run/user/1000/secrets.d";
     };
     xdg = {
       enable = true;
@@ -45,9 +47,7 @@ in {
         };
       };
     };
-    home.file."test.txt".text = ''
-      hello ${config.sops.secrets.hello.path}
-    '';
+
     nix.settings.extra-experimental-features = [ "nix-command" "flakes" ];
   };
 }
