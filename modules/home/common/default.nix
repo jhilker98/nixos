@@ -34,8 +34,6 @@ in {
       defaultSopsFile = ../../../secrets/secrets.yaml;
       defaultSopsFormat = "yaml";
       age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
-      #defaultSymlinkPath = "/run/user/1000/secrets";
-      #defaultSecretsMountPoint = "/run/user/1000/secrets.d";
     };
     xdg = {
       enable = true;
