@@ -25,9 +25,6 @@ in {
         "ls" = "${pkgs.eza}/bin/eza -alh --group-directories-first";
         "cat" = "${pkgs.bat}/bin/bat -p";
       };
-  activation.setupEtc = config.lib.dag.entryAfter [ "writeBoundary" ] ''
-    run /run/current-system/sw/bin/systemctl --user restart sops-nix.service
-  '';
     };
     programs = { home-manager.enable = true; };
     sops = {
