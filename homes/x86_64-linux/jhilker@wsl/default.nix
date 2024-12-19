@@ -13,6 +13,7 @@ with lib.jhilker98; {
     };
     dev = {
       nixvim.enable = true;
+      emacs.enable = true;
     };
   };
 
