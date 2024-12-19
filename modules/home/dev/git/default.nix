@@ -33,5 +33,6 @@ in {
       };
       ignores = [ "result" "result-*" "node_modules/" "*~" "*.swp" ];
     };
+    home.packages = with pkgs; [ graphite-cli];
   };
 }
