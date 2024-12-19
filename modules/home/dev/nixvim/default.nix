@@ -17,7 +17,7 @@ config = mkIf cfg.enable {
         };
         plugins = {
           lightline.enable = true;
-          surround.enable = true;
+          vim-surround.enable = true;
           startify.enable = true;
           fugitive.enable = true;
           direnv.enable = true;
