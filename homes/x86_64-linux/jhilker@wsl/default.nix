@@ -1,8 +1,5 @@
 {lib, config, pkgs, inputs, username ? "camoh", ...}:
 with lib.jhilker98; {
-  imports = [
-    inputs.sops-nix.homeManagerModules.sops
-  ];
   jhilker98 = {
     common.enable = true;
     calendar.enable = true;
