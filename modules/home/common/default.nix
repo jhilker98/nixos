@@ -20,6 +20,7 @@ in {
         sops
         age
         git-crypt
+        calc
       ];
       shellAliases = {
         "ls" = "${pkgs.eza}/bin/eza -alh --group-directories-first";
