@@ -9,6 +9,7 @@ with lib.jhilker98; {
       zsh.enable = true;
     };
     dev = {
+      enable = true;
       nixvim.enable = true;
       emacs.enable = true;
     };
