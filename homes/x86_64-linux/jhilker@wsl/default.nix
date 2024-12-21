@@ -1,4 +1,5 @@
-{lib, config, pkgs, inputs, username ? "camoh", ...}:
+{ lib, config, pkgs, inputs, username ? "camoh", ... }:
+
 with lib.jhilker98; {
   jhilker98 = {
     common.enable = true;
@@ -14,7 +15,5 @@ with lib.jhilker98; {
       emacs.enable = true;
     };
   };
-
-
 
 }
