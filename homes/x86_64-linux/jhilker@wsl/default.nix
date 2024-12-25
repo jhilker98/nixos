@@ -13,6 +13,7 @@ with lib.jhilker98; {
       enable = true;
       nixvim.enable = true;
       emacs.enable = true;
+      langs = { rust.enable = true; };
     };
   };
 
