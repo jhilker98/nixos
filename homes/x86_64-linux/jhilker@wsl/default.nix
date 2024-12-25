@@ -13,14 +13,16 @@ with lib.jhilker98; {
       enable = true;
       nixvim.enable = true;
       emacs.enable = true;
-      langs = { rust.enable = true; };
+      langs = {
+        rust.enable = true;
+        python.enable = true;
+      };
     };
   };
 
   home = {
     sessionVariables = {
       "WSLHOME" = "/mnt/c/Users/camoh";
-      "VIRTUALENVWRAPPER_PYTHON" = "/home/jhilker/.nix-profile/bin/python3";
       "DISPLAY" =
         "$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0";
       "GPG_TTY" = "$(tty)";
