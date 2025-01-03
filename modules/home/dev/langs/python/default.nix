@@ -23,7 +23,7 @@ in {
     home.sessionVariables = {
       "VIRTUALENVWRAPPER_PYTHON" =
         "${config.home.homeDirectory}/.nix-profile/bin/python3";
-      "PROJECT_HOME" = "${config.home.homeDirectory}/Devel/python";
+      "PROJECT_HOME" = "${config.home.homeDirectory}/src/python";
     };
     programs.zsh.initExtra = ''
       source ${pkgs.python3Packages.virtualenvwrapper}/bin/virtualenvwrapper.sh
