@@ -1,15 +1,12 @@
-{config, lib, pkgs, inputs, ...}:
+{ config, lib, pkgs, inputs, ... }:
 with lib;
 with lib.jhilker98;
-let
-cfg = config.jhilker98.dev;
+let cfg = config.jhilker98.dev;
 in {
-options.jhilker98.dev = { enable = mkEnableOption "module name"; };
-config = mkIf cfg.enable {
-  programs = { 
-      direnv = { enable = true; }; 
-};
-    home.packages = with pkgs; [ cheat act tldr ];
+  options.jhilker98.dev = { enable = mkEnableOption "Dev module"; };
+  config = mkIf cfg.enable {
+    programs = { direnv = { enable = true; }; };
+    home.packages = with pkgs; [ cheat act tldr cocogitto ];
     home.file."Documents/cheat/community".source = pkgs.fetchFromGitHub {
       owner = "cheat";
       repo = "cheatsheets";
@@ -34,5 +31,5 @@ config = mkIf cfg.enable {
           }
         ];
       };
-};
+  };
 }
