@@ -38,9 +38,7 @@ in {
       mime = { enable = true; };
       userDirs = {
         enable = true;
-        extraConfig = {
-          "XDG_PROJECT_DIR" = "${config.home.homeDirectory}/Devel";
-        };
+        extraConfig = { "XDG_SRC_DIR" = "${config.home.homeDirectory}/src"; };
       };
     };
 
