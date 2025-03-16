@@ -21,6 +21,7 @@ in {
         age
         git-crypt
         calc
+        glance
       ];
       shellAliases = {
         "ls" = "${pkgs.eza}/bin/eza -alh --group-directories-first";
