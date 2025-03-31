@@ -16,6 +16,7 @@ in {
           pip
           httpx
           pygobject3
+          requests
         ]))
 
       pyright
