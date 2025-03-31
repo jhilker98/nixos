@@ -8,7 +8,7 @@ options.jhilker98.dev.emacs = { enable = mkEnableOption "Emacs"; };
 config = mkIf cfg.enable {
   programs.emacs = {
       enable = true;
-      package = pkgs.emacs29;
+      package = pkgs.emacs30;
     };
     services.emacs = { enable = true; };
     xdg.configFile."doom" = {
