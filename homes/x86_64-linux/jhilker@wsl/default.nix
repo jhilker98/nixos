@@ -34,11 +34,7 @@ with lib.jhilker98; {
       ttfautohint
       nodejs
       nodePackages.npm
-      nodePackages.tailwindcss
-      nodePackages.postcss-cli
-      nodePackages.typescript
-      nodePackages.degit
-      nodePackages.postcss
+      typescript
       rustc
       cargo
       go

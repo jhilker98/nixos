@@ -27,7 +27,6 @@ config = mkIf cfg.enable {
         fd
         imagemagick
         zstd
-        nodePackages.javascript-typescript-langserver
         sqlite
         editorconfig-core-c
         emacs-all-the-icons-fonts
