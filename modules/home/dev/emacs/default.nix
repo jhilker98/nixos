@@ -1,12 +1,11 @@
-{config, lib, pkgs, inputs, ...}:
+{ config, lib, pkgs, inputs, ... }:
 with lib;
 with lib.jhilker98;
-let
-cfg = config.jhilker98.dev.emacs;
+let cfg = config.jhilker98.dev.emacs;
 in {
-options.jhilker98.dev.emacs = { enable = mkEnableOption "Emacs"; };
-config = mkIf cfg.enable {
-  programs.emacs = {
+  options.jhilker98.dev.emacs = { enable = mkEnableOption "Emacs"; };
+  config = mkIf cfg.enable {
+    programs.emacs = {
       enable = true;
       package = pkgs.emacs30;
     };
@@ -31,7 +30,8 @@ config = mkIf cfg.enable {
         editorconfig-core-c
         emacs-all-the-icons-fonts
         gh
+        typescript-language-server
       ];
     };
-};
+  };
 }
