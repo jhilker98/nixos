@@ -86,5 +86,5 @@ with lib.jhilker98; {
       '')
     ];
   };
-  programs.git.signing.gpgPath = "/mnt/c/Program Files (x86)/GnuPG/bin/gpg.exe";
+  programs.git.signing.signer = "/mnt/c/Program Files (x86)/GnuPG/bin/gpg.exe";
 }
