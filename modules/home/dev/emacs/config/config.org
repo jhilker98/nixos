@@ -204,7 +204,13 @@
 #+end_src
 
 *** Hydra
-I like to use popup windows as much as I can, along with making my hydras prettier.
+I like to use popup windows as much as I can, along with making my hydras prettier. In addition, I find hydras easier to work with than transients.
+#+begin_src emacs-lisp :tangle modules/ui/hydra/packages.el
+(use-package! hydra)
+#+end_src
+
+
+**** UI Tweaks
 #+begin_src emacs-lisp :tangle packages.el
 (when (modulep! :ui hydra +childframe)
   (package! hydra-posframe
