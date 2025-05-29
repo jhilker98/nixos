@@ -1,1 +1,1 @@
-(use-package! hydra)
+(package! hydra)

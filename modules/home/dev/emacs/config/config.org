@@ -206,7 +206,7 @@
 *** Hydra
 I like to use popup windows as much as I can, along with making my hydras prettier. In addition, I find hydras easier to work with than transients.
 #+begin_src emacs-lisp :tangle modules/ui/hydra/packages.el
-(use-package! hydra)
+(package! hydra)
 #+end_src
 
 
@@ -686,8 +686,8 @@ I like to have a quick menu for accessing commmands in dired.
 #+begin_src emacs-lisp :tangle packages.el
 (when (modulep! :emacs dired +casual)
 
-(package! casual-dired
-    :recipe (:host github :repo "kickingvegas/casual-dired")))
+(package! casual-suite
+    :recipe (:host github :repo "kickingvegas/casual")))
 #+end_src
 
 
