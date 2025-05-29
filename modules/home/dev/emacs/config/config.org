@@ -1,5 +1,5 @@
 #+title: Doom Emacs
-#+property: header-args :noweb yes
+#+property: header-args :noweb yes :mkdirp yes
 #+property: header-args:emacs-lisp :tangle config.el
 #+startup: fold
 
