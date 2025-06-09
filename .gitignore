@@ -8,4 +8,3 @@ docs/public
 /.emacs/
 docs/.hugo_build.lock
 secrets/.decrypted~secrets.yaml
-modules/home/dev/emacs/config/*.el
