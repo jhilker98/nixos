@@ -5,7 +5,8 @@
   (setq lsp-tailwindcss-add-on-mode t))
 
 (setq user-full-name "Jacob Hilker"
-      user-mail-address "jacob.hilker2@gmail.com")
+      user-mail-address "jacob.hilker2@gmail.com"
+      doom-user-dir "~/.dotfiles/modules/home/dev/emacs/config")
 
 (when (modulep! emoji)
 	(emojify-download-emoji))
