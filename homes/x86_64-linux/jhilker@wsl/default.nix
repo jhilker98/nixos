@@ -18,6 +18,9 @@ with lib.jhilker98; {
         python.enable = true;
       };
     };
+    apps = {
+      ledger.enable = true;
+    };
   };
 
   home = {
