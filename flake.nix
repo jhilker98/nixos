@@ -81,9 +81,6 @@
           home-manager.nixosModules.home-manager
         ];
         hosts = {
-          wsl.modules = with inputs; [
-            nixos-wsl.nixosModules.wsl
-          ];
         };
       };
       homes = {
