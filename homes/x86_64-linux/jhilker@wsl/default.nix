@@ -47,7 +47,6 @@ with lib.jhilker98; {
       hugo
       nix-prefetch-git
       ranger
-      nodePackages.pnpm
       graphite-cli
       bitwarden-cli
       iamb
