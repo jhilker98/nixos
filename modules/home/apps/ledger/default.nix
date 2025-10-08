@@ -9,6 +9,7 @@ config = mkIf cfg.enable {
   home.packages = with pkgs; [
     beancount
     hledger
+    paisa
   ];
 
 };
