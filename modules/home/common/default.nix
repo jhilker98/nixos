@@ -11,6 +11,7 @@ in {
       stateVersion = "24.11"; # do not update
       username = "jhilker";
       packages = with pkgs; [
+        python3Packages.cmake
         nixfmt
         plantuml
         units

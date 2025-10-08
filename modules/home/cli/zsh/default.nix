@@ -18,7 +18,7 @@ in {
       autocd = true;
       dotDir = ".config/zsh";
       shellAliases = { ref = "source ~/.config/zsh/.zshrc"; };
-      initExtra = ''
+      initContent = ''
         export $(dbus-launch)
       '';
     };
