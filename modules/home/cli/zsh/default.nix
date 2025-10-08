@@ -16,7 +16,7 @@ in {
       syntaxHighlighting.enable = true;
       enableCompletion = true;
       autocd = true;
-      dotDir = ".config/zsh";
+      dotDir = "${config.xdg.configHome}/zsh";
       shellAliases = { ref = "source ~/.config/zsh/.zshrc"; };
       initContent = ''
         export $(dbus-launch)
