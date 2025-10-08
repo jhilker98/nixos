@@ -8,7 +8,7 @@ options.jhilker98.apps.ledger = { enable = mkEnableOption "Ledger"; };
 config = mkIf cfg.enable {
   home.packages = with pkgs; [
     beancount
-    # ledger
+    hledger
   ];
 
 };

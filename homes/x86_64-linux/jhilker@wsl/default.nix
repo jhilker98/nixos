@@ -35,7 +35,6 @@ with lib.jhilker98; {
       zlib
       wakatime
       ttfautohint
-      nodejs
       nodePackages.npm
       typescript
       rustc
