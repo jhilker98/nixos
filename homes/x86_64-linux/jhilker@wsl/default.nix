@@ -33,7 +33,7 @@ with lib.jhilker98; {
     packages = with pkgs; [
       qpdf
       zlib
-      wakatime
+      wakatime-cli
       ttfautohint
       nodePackages.npm
       typescript
