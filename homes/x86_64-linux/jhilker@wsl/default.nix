@@ -50,6 +50,7 @@ with lib.jhilker98; {
       bitwarden-cli
       iamb
       jq
+      obsidian
       (pkgs.writers.writePython3Bin "rdate" { libraries = [ ]; } ''
         import random as r
         import argparse
@@ -87,5 +88,5 @@ with lib.jhilker98; {
       '')
     ];
   };
-  programs.git.signing.signer = "/mnt/c/Program Files (x86)/GnuPG/bin/gpg.exe";
+#  programs.git.signing.signer = "/mnt/c/Program Files (x86)/GnuPG/bin/gpg.exe";
 }
