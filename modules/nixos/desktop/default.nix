@@ -30,7 +30,7 @@ in {
           theme = "sugar-dark";
         };
 
-        defaultSession = "none+qtile";
+        defaultSession = "qtile";
       };
     };
     services.picom = mkIf cfg.usePicom {

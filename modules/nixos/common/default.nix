@@ -21,10 +21,9 @@ in {
       };
     };
     nix = {
-      package = pkgs.nixFlakes;
       nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
       settings = {
-        #extraExperimentalFeaatures = ["nix-command" "flakes"];
+        extraExperimentalFeatures = ["nix-command" "flakes"];
         auto-optimise-store = true;
       };
       gc = {
