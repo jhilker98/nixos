@@ -86,6 +86,7 @@ with lib.jhilker98; {
             day = r.randint(1, dates[month])
             print(f'{day:02} {month} {year}')
       '')
+      lutgen
     ];
   };
 #  programs.git.signing.signer = "/mnt/c/Program Files (x86)/GnuPG/bin/gpg.exe";
